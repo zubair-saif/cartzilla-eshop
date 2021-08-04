@@ -10,6 +10,7 @@ import { NavbarsComponent } from './shared/navbars/navbars.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { JumbotronComponent } from './shared/jumbotron/jumbotron.component';
 import { PaginationComponent } from './shared/pagination/pagination.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PaginationComponent } from './shared/pagination/pagination.component';
     NavbarsComponent,
     FooterComponent,
     JumbotronComponent,
-    PaginationComponent
+    PaginationComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
