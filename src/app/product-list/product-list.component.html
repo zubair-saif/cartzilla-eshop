@@ -1,0 +1,41 @@
+<app-jumbotron></app-jumbotron>
+<div class="row">
+    <div class="d-flex justify-content-center" *ngIf="isLoading">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <ng-container *ngIf="productList.length>0">
+        <div class="col-md-3 my-3" *ngFor="let item of productList">
+            <div class="card shadow-sm p-3 h-100">
+                <img src={{item.image}} class="card-img-top img-fluid" alt={{item.title}}>
+                <div class="card-body">
+                    <h5 class="card-title text-truncate">{{item.title}}</h5>
+                    <p class="card-text text-truncate">{{item.description}}</p>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="d-inline-block mb-2">{{item.price |currency}}</span>
+                        <small class="text-muted">{{item.category}}</small>
+                    </div>
+
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-bg d-block w-100">
+                        <i class="bi bi-cart-plus"></i>
+                        Add to cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+</div>
+<div class="row">
+    <ng-container *ngIf="productList.length===0">
+        <div class="col-4 my-auto mx-auto">
+            <img src="../../assets/undraw_empty_xct9.svg" class="img-fluid" alt="">
+        </div>
+    </ng-container>
+
+</div>
+<app-pagination></app-pagination>
