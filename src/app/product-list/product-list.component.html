@@ -10,14 +10,19 @@
             <div class="card shadow-sm p-3 h-100">
                 <img src={{item.image}} class="card-img-top img-fluid" alt={{item.title}}>
                 <div class="card-body">
+                    <a class="product-meta d-block fs-xs pb-1" href="#">{{item.category}}</a>
                     <h5 class="card-title text-truncate">{{item.title}}</h5>
                     <p class="card-text text-truncate">{{item.description}}</p>
-
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span class="d-inline-block mb-2">{{item.price |currency}}</span>
-                        <small class="text-muted">{{item.category}}</small>
+                    <div class="d-flex justify-content-between">
+                        <div class="product-price"><span class="text-accent">{{item.price |currency}}</span></div>
+                        <div class="star-rating">
+                            <i class="bi bi-star-fill star-rating"></i>
+                            <i class="bi bi-star-fill star-rating"></i>
+                            <i class="bi bi-star-fill star-rating"></i>
+                            <i class="bi bi-star-fill star-rating"></i>
+                            <i class="bi bi-star-half star-rating"></i>
+                        </div>
                     </div>
-
                 </div>
                 <div class="card-footer">
                     <button type="button" class="btn btn-bg d-block w-100">

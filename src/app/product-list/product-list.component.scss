@@ -21,3 +21,14 @@
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
+.btn:hover {
+  color: #ffffff;
+}
+.star-rating {
+  color: #fea569;
+}
+.product-meta {
+  transition: color .25s ease-in-out;
+  color: #7d879c;
+  text-decoration: none !important;
+}
