@@ -2,7 +2,7 @@
     <div class="row">
         <h3 *ngIf="checkoutProduct.length>0">Checkout Summary</h3>
         <div class="col-lg-8">
-            <ng-container *ngIf="checkoutProduct.length>0">
+            <!-- <ng-container *ngIf="checkoutProduct.length>0">
                 <div class="card shadow-sm mb-3 mt-3" *ngFor="let item  of checkoutProduct">
                     <div class="row g-0">
                         <div class="col-md-2 p-3">
@@ -23,7 +23,44 @@
                         </div>
                     </div>
                 </div>
+            </ng-container> -->
+            <ng-container *ngIf="checkoutProduct.length>0">
+                <div class="table-wrap mt-3">
+                    <table class="table table-responsive table-borderless">
+                        <thead>
+    
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>total</th>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                        </thead>
+                        <tbody>
+                            <tr class="align-middle alert border-bottom" role="alert" *ngFor="let item  of checkoutProduct">
+    
+                                <td class="text-center"> <img class="pic" src={{item.image}} alt=""> </td>
+                                <td>
+                                    <div>
+                                        <p class="m-0 fw-bold">Sneakers Shoes 2020 For Men</p>
+                                        <p class="m-0 text-muted">Fugiat Voluptates quasi nemo,ipsa perferencis</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="fw-600">{{item.price |currency}}</div>
+                                </td>
+                                <td class="d-"> <input class="input" type="text" placeholder="2"> </td>
+                                <td> {{total |currency}} </td>
+                                <td>
+                                    <div class="btn" data-bs-dismiss="alert"> <i class="bi bi-trash"
+                                            aria-label="Remove Item" type="button" (click)="removeItem(item.id)"></i> </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </ng-container>
+       
             <ng-container *ngIf="checkoutProduct.length===0">
                 <h3>Empty cart</h3>
                 <div class="col-4 my-auto py-4 mx-auto">
@@ -37,3 +74,7 @@
         </div>
     </div>
 </section>
+
+<div class="container">
+
+</div>
