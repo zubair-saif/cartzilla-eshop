@@ -1,0 +1,32 @@
+<div class="bg-secondary p-4 shadow-sm">
+    <h3>Order totals</h3>
+    <hr />
+    <ul class="list-group ">
+        <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+            <strong> Subtotal:</strong>
+            <span class="badge bg-order-details rounded-pill">{{total |currency}}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+            Shipping costs:
+            <span class="badge bg-order-details  rounded-pill">250</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+            Discount:
+            <span class="badge bg-order-details rounded-pill">200</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+            Estimated sales tax:
+            <span class="badge bg-order-details rounded-pill">145</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center border-top border-0">
+            Order total:
+
+            <span class="badge bg-order-details rounded-pill">{{total |currency}}</span>
+        </li>
+    </ul>
+
+</div>
+<button type="button" class="btn btn-bg d-block w-100 mt-3">
+
+    Complete Your Order
+</button>

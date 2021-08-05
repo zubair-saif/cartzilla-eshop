@@ -11,6 +11,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { JumbotronComponent } from './shared/jumbotron/jumbotron.component';
 import { PaginationComponent } from './shared/pagination/pagination.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { OrderTotalComponent } from './shared/order-total/order-total.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     FooterComponent,
     JumbotronComponent,
     PaginationComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    OrderTotalComponent
   ],
   imports: [
     BrowserModule,

@@ -1,64 +1,39 @@
 <section class="py-5">
     <div class="row">
-        <h3>Checkout</h3>
+        <h3 *ngIf="checkoutProduct.length>0">Checkout Summary</h3>
         <div class="col-lg-8">
-  
-            <!-- <span>{{checkoutProduct |json}}</span> -->
-            <div class="card shadow-sm mb-3 mt-3" *ngFor="let item  of this.checkoutProduct">
-                <div class="row g-0">
-                    <div class="col-md-2 p-3">
-                        <img src={{item.image}} class="img-fluid rounded-start checkout-img" alt={{item.title}}>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card-body">
-                            <h6>{{item.title}}</h6>
-                            <p class="card-text"><small class="text-muted">{{item.price}}</small></p>
+            <ng-container *ngIf="checkoutProduct.length>0">
+                <div class="card shadow-sm mb-3 mt-3" *ngFor="let item  of checkoutProduct">
+                    <div class="row g-0">
+                        <div class="col-md-2 p-3">
+                            <img src={{item.image}} class="img-fluid rounded-start checkout-img" alt={{item.title}}>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="d-flex justify-content-between p-3 m-3 align-middle">
-                            <p class="card-text"><small class="text-muted">{{item.price |currency}}</small></p>
-                            <i class="bi bi-trash" aria-label="Remove Item" type="button" (click)="removeItem(item.id)"></i>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <h6>{{item.title}}</h6>
+                                <p class="card-text"><small class="text-muted">{{item.price |currency}}</small></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="d-flex justify-content-between p-3 m-3 align-middle">
+                                <p class="card-text"><small class="text-muted">{{item.price |currency}}</small></p>
+                                <i class="bi bi-trash" aria-label="Remove Item" type="button"
+                                    (click)="removeItem(item.id)"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
+            </ng-container>
+            <ng-container *ngIf="checkoutProduct.length===0">
+                <h3>Empty cart</h3>
+                <div class="col-4 my-auto py-4 mx-auto">
+                    <img src="../../assets/undraw_empty_cart_co35.svg" class="img-fluid" alt="">
+                </div>
+            </ng-container>
 
         </div>
         <div class="col-lg-4 p-3">
-            <div class="bg-secondary p-4 shadow-sm">
-                <h3>Order totals</h3>
-                <hr />
-                <ul class="list-group ">
-                    <li class="list-group-item d-flex justify-content-between align-items-center border-0">
-                        <strong> Subtotal:</strong>
-                        <span class="badge bg-order-details rounded-pill">{{total |currency}}</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center border-0">
-                        Shipping costs:
-                        <span class="badge bg-order-details  rounded-pill">250</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center border-0">
-                        Discount:
-                        <span class="badge bg-order-details rounded-pill">200</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center border-0">
-                        Estimated sales tax:
-                        <span class="badge bg-order-details rounded-pill">145</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center border-top border-0">
-                        Order total:
-
-                        <span class="badge bg-order-details rounded-pill">{{total |currency}}</span>
-                    </li>
-                </ul>
-
-            </div>
-            <button type="button" class="btn btn-bg d-block w-100 mt-3">
-
-                Complete Your Order
-            </button>
+            <app-order-total [total]="total"></app-order-total>
         </div>
     </div>
 </section>
