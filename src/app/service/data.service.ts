@@ -1,8 +1,9 @@
+import { Product } from './../shared/product';
 import { Injectable, } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
-import { Product } from '../shared/product';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,12 +17,31 @@ export class DataService {
   getAllProduct(): Observable<any> {
     return this.http.get(`${environment.apiUrl}/products`);
   }
-  addProductToCart(item: Product) {
+  addProductToCart(item: Product): void {
     this.cartItem.push(item);
     this.$product.next(this.cartItem);
-   localStorage.setItem('cart', JSON.stringify(this.cartItem))
+    localStorage.setItem('cart', JSON.stringify(this.cartItem));
   }
   getProductsCount(): Observable<any> {
     return this.$product.asObservable();
   }
+  getCart(): Product[] {
+    return JSON.parse(localStorage.getItem('cart') || '[]');
+
+  }
+  removeItemFromCheckOut(productId: number): void {
+    this.cartItem.map((item: Product, index: number) => {
+      if (item.id === productId) {
+        this.cartItem.splice(index, 1);
+
+      }
+    });
+    localStorage.setItem('cart', JSON.stringify(this.cartItem));
+    return this.$product.next(this.cartItem);
+  }
+
+  getTotalPrice() {
+    return this.cartItem.reduce((total: number, item: { price: number; }) => total + item.price, 0);
+  }
+
 }

@@ -9,16 +9,21 @@ import { DataService } from '../service/data.service';
 export class CheckoutComponent implements OnInit {
 
   public checkoutProduct: any = [];
+  public total: any;
   constructor(private data: DataService) { }
 
   ngOnInit(): void {
-    this.checkoutProduct = localStorage.getItem('cart');
-    console.log(this.checkoutProduct)
-    // console.log(JSON.parse(this.checkoutProduct))
-    this.data.getProductsCount().subscribe(res => {
-      this.checkoutProduct = res;
-      console.log(res)
+    this.total=this.data.getTotalPrice();
+    this.checkoutProduct =this.data.getCart();
+    this.data.getProductsCount().subscribe((res:any)=>{
+      this.total=this.data.getTotalPrice();
+      this.checkoutProduct=res;
+      
     })
+  }
+
+  removeItem(productId: number) {
+    this.data.removeItemFromCheckOut(productId);
   }
 
 }

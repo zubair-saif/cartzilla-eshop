@@ -13,7 +13,6 @@ export class NavbarsComponent implements OnInit {
   ngOnInit(): void {
     this.data.getProductsCount().subscribe(res => {
       this.cartProductCount = res.length;
-      console.log(res)
     })
   }
 
