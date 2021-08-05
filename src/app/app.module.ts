@@ -9,9 +9,9 @@ import { CartComponent } from './cart/cart.component';
 import { NavbarsComponent } from './shared/navbars/navbars.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { JumbotronComponent } from './shared/jumbotron/jumbotron.component';
-import { PaginationComponent } from './shared/pagination/pagination.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrderTotalComponent } from './shared/order-total/order-total.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -22,14 +22,14 @@ import { OrderTotalComponent } from './shared/order-total/order-total.component'
     NavbarsComponent,
     FooterComponent,
     JumbotronComponent,
-    PaginationComponent,
     CheckoutComponent,
     OrderTotalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

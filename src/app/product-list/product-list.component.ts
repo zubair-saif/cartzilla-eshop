@@ -11,7 +11,7 @@ export class ProductListComponent implements OnInit {
 
   public productList: any = [];
   public isLoading: boolean = false;
-
+  p: number = 1;
   constructor(private data: DataService) { }
 
   ngOnInit(): void {
