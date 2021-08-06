@@ -1,5 +1,6 @@
 <app-jumbotron></app-jumbotron>
 <div class="row">
+    <h2 class="h3 text-center">Trending products</h2>
     <div class="d-flex justify-content-center" *ngIf="isLoading">
         <div class="spinner-border" role="status">
             <span class="visually-hidden">Loading...</span>
@@ -7,7 +8,7 @@
     </div>
     <ng-container *ngIf="productList && productList.length>0">
         <div class="col-lg-3 col-md-6  my-3" *ngFor="let item of productList | paginate: { itemsPerPage: 8, currentPage: p }">
-            <div class="card shadow-sm p-3 h-100">
+            <div class="card border-0 p-3 h-100">
                 <img src={{item.image}} class="card-img-top img-fluid" alt={{item.title}}>
                 <div class="card-body">
                     <a class="product-meta d-block fs-xs pb-1" href="#">{{item.category}}</a>
@@ -46,3 +47,21 @@
 <div class="col-md-4 mx-auto my-4">
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
+
+<section class="container py-lg-4 mb-4">
+    <h2 class="h3 text-center pb-4">Shop by brand</h2>
+    <div class="row">
+      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/01.png" style="width: 150px;" alt="Brand"></a></div>
+      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/02.png" style="width: 150px;" alt="Brand"></a></div>
+      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/03.png" style="width: 150px;" alt="Brand"></a></div>
+      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/04.png" style="width: 150px;" alt="Brand"></a></div>
+      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/05.png" style="width: 150px;" alt="Brand"></a></div>
+      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/06.png" style="width: 150px;" alt="Brand"></a></div>
+      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/07.png" style="width: 150px;" alt="Brand"></a></div>
+      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/08.png" style="width: 150px;" alt="Brand"></a></div>
+      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/09.png" style="width: 150px;" alt="Brand"></a></div>
+      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/10.png" style="width: 150px;" alt="Brand"></a></div>
+      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/11.png" style="width: 150px;" alt="Brand"></a></div>
+      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/12.png" style="width: 150px;" alt="Brand"></a></div>
+    </div>
+  </section>
