@@ -2,14 +2,24 @@
 // body{
 //     // font-family: 'Poppins', sans-serif;
 // }
+$color:#8912FC;
+$text-color:#ffffff;
 .btn-bg{
-    background: #8912FC;
-    color: #ffffff;
+    background: $color;
+    color: $text-color;
 }
 .btn-color{
-    color: #8912FC;
+    color: $color;
 }
 .btn-bg:hover{
-    color: #ffffff;
+    color: $text-color;
 }
 
+a{
+    text-decoration: none;
+}
+.ngx-pagination .current {
+    padding: 0.1875rem 0.625rem;
+    background: $color!important;
+    color: $text-color;
+}
