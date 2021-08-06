@@ -1,2 +1,42 @@
 
-  
+  .card-banner {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 0.37rem;
+}
+.overlay-gradient {
+    position: relative;
+}
+.overlay-gradient:before {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.6;
+    transition: 0.5s;
+    background: aqua;
+    background: linear-gradient(to bottom right, #3167eb, aqua);
+}
+.white {
+    color: #fff;
+}
+
+.card-banner {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 0.37rem;
+}
+.overlay-gradient:hover:before {
+    opacity: 0.9;
+}
