@@ -12,6 +12,7 @@ import { JumbotronComponent } from './shared/jumbotron/jumbotron.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrderTotalComponent } from './shared/order-total/order-total.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CatSidebarComponent } from './shared/cat-sidebar/cat-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FooterComponent,
     JumbotronComponent,
     CheckoutComponent,
-    OrderTotalComponent
+    OrderTotalComponent,
+    CatSidebarComponent
   ],
   imports: [
     BrowserModule,
