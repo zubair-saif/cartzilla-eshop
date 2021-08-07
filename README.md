@@ -1,4 +1,4 @@
-# LinkedinClone
+# Cartzilla-eshop
 
 # Main page
 
