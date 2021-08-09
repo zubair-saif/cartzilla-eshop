@@ -9,7 +9,8 @@
       </div>
     </form>
     <ul class="list-menu">
-      <li><a href="#">Electronics </a></li>
+      <li><a href="#">Electronics 
+      </a></li>
       <li><a href="#">Watches </a></li>
       <li><a href="#">Cinema </a></li>
       <li><a href="#">Clothes </a></li>
@@ -17,10 +18,39 @@
     </ul>
   </p-accordionTab>
   <p-accordionTab header="Price">
-
+    <input type="range" class="custom-range" min="0" max="100" name="">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Min</label>
+        <input class="form-control" placeholder="$0" type="number">
+      </div>
+      <div class="form-group text-right col-md-6">
+        <label>Max</label>
+        <input class="form-control" placeholder="$1,0000" type="number">
+      </div>
+    </div>
+    <button class="btn btn-block btn-primary">Apply</button>
   </p-accordionTab>
   <p-accordionTab header=" Size">
+    <label class="checkbox-btn">
+      <input type="checkbox">
+      <span class="btn btn-light"> XS </span>
+    </label>
 
+    <label class="checkbox-btn">
+      <input type="checkbox">
+      <span class="btn btn-light"> SM </span>
+    </label>
+
+    <label class="checkbox-btn">
+      <input type="checkbox">
+      <span class="btn btn-light"> LG </span>
+    </label>
+
+    <label class="checkbox-btn">
+      <input type="checkbox">
+      <span class="btn btn-light"> XXL </span>
+    </label>
   </p-accordionTab>
 </p-accordion>
 <!-- <output>
