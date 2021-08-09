@@ -12,8 +12,10 @@ import { JumbotronComponent } from './shared/jumbotron/jumbotron.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrderTotalComponent } from './shared/order-total/order-total.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { CatSidebarComponent } from './shared/cat-sidebar/cat-sidebar.component';
 
+import { ShareModuleModule } from './share-module/share-module.module';
+import { CatSidebarModule } from './shared/cat-sidebar/cat-sidebar.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,13 +27,15 @@ import { CatSidebarComponent } from './shared/cat-sidebar/cat-sidebar.component'
     JumbotronComponent,
     CheckoutComponent,
     OrderTotalComponent,
-    CatSidebarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ShareModuleModule,
+    CatSidebarModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,30 +1,45 @@
 .filter-group {
-    border-bottom: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
+}
+.filter-group .card-header {
+  border-bottom: 0;
+}
+
+.icon-control {
+  margin-top: 5px;
+  float: right;
+  font-size: 80%;
+}
+.card-header .title {
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+.card-header {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.list-menu {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+.list-menu li a {
+  color: #343a40;
+}
+
+::ng-deep.p-accordion {
+  .p-accordion-header {
+    .p-accordion-header-link {
+      background: #ffffff;
+      border: none;
+      .pi{font-size: .6rem;}
+    }
   }
-  .filter-group .card-header {
-    border-bottom: 0;
+
+  .p-accordion-content {
+    border: none;
+   
   }
-  
-  .icon-control {
-    margin-top: 5px;
-    float: right;
-    font-size: 80%;
-  }
-  .card-header .title {
-    margin-bottom: 0;
-    line-height: 1.5;
-  }
-  .card-header {
-    padding: 0.75rem 1.25rem;
-    margin-bottom: 0;
-    background-color: #fff;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  .list-menu {
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-  }
-  .list-menu li a {
-    color: #343a40;
-  }
+}
