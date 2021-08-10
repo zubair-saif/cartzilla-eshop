@@ -9,7 +9,7 @@
       </div>
     </form>
     <ul class="list-group " *ngFor="let cat of catagoryList;let i=index">
-      <li class="list-group-item border-0 d-flex justify-content-between align-items-center"    (click)="isSelected(cat)">
+      <li class="list-group-item border-0 d-flex justify-content-between align-items-center" (click)="isSelected(cat)">
         {{cat}}
         
         <span class="badge btn-bg rounded-pill">{{14+i}}</span>

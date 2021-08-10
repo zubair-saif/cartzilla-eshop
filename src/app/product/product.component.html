@@ -10,11 +10,11 @@
       </div>
 
       <div class="col-md-4 d-flex">
-        <select class="form-select" aria-label="Latest items">
-          <option>Latest items</option>
-          <option>Trending</option>
-          <option>Most Popular</option>
-          <option>Cheapest</option>
+        <select class="form-select" aria-label="Latest items" (change)="isProductSort($event)">
+          <option value="" selected disabled hidden>Sort By</option>
+          <option value="Name">Name</option>
+          <option value="Low">Show Low to High Price</option>
+          <option value="High">Show High to Low Price</option>
         </select>
         <div class="btn-group" role="group" aria-label="grid layout">
           <a href="#" class="btn btn-outline-secondary "  data-original-title="List view">

@@ -26,4 +26,42 @@ export class ProductComponent implements OnInit {
     });
     this.data.addProductToCart(addToCart[0]);
   }
+  isProductSort(event: any) {
+    switch (event.target.value) {
+      case "Low":
+        {
+          this.productList = this.productList.sort((low: any, high: any) => low.price - high.price);
+          break;
+        }
+
+      case "High":
+        {
+          this.productList = this.productList.sort((low: any, high: any) => high.price - low.price);
+          break;
+        }
+
+      case "Name":
+        {
+          this.productList = this.productList.sort((low: any, high: any) => {
+            if (low.title < high.title) {
+              return -1;
+            }
+            else if (low.title > high.title) {
+              return 1;
+            }
+            else {
+              return 0;
+            }
+          })
+          break;
+        }
+
+      default: {
+        this.productList = this.productList.sort((low: any, high: any) => low.price - high.price);
+        break;
+      }
+
+    }
+    return this.productList
+  }
 }
