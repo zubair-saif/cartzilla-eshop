@@ -8,7 +8,7 @@ import { CatSidebarComponent } from './cat-sidebar.component';
   declarations: [CatSidebarComponent],
   imports: [
     CommonModule,
-    ShareModuleModule
+    ShareModuleModule,
   ],
   exports:[CatSidebarComponent]
 })

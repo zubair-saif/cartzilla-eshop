@@ -34,12 +34,39 @@
     .p-accordion-header-link {
       background: #ffffff;
       border: none;
-      .pi{font-size: .6rem;}
+      .pi {
+        font-size: 0.6rem;
+      }
     }
   }
 
   .p-accordion-content {
     border: none;
-   
   }
+}
+::ng-deep
+  .p-accordion
+  .p-accordion-header:not(.p-disabled).p-highlight
+  .p-accordion-header-link {
+  border: none;
+  background: #ffffff!important;
+}
+
+.checkbox-btn {
+  position: relative;
+  padding: 0px 5px;
+}
+.checkbox-btn input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.btn-light {
+  background-color: #fff;
+  border-color: #e4e4e4;
+}
+.checkbox-btn input:checked ~ .btn {
+  border-color: #3167eb;
+  background-color: #3167eb;
+  color: #fff;
 }
