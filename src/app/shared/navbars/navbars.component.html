@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link text-capitalize" routerLink="/" routerLinkActive="active" aria-current="page">home</a>
+          <a class="nav-link text-capitalize" routerLink="/" routerLinkActive="active" aria-current="home">home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-capitalize" routerLink="/product">shop</a>
@@ -26,9 +26,13 @@
         </li>
       </ul>
       <ul class="mb-0">
-        <span class="icon ">
+        
+        <span class="icon">
           <a href="#" class="text-decoration-none btn-color"></a></span>
-        <span class="cart-count btn-color"><i class="bi bi-cart" routerLink="/checkout"></i><em>{{cartProductCount}}</em></span>
+        <span class="cart-count btn-color">
+          <i class="bi bi-cart" routerLink="/checkout"></i>
+          <em>{{cartProductCount}}</em>
+        </span>
       </ul>
     </div>
   </div>

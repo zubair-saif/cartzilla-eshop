@@ -27,7 +27,7 @@ export class ProductComponent implements OnInit {
     this.data.addProductToCart(addToCart[0]);
   }
   isProductSort(event: any) {
-    switch (event.target.value) {
+    switch (event.target.value) {     
       case "Low":
         {
           this.productList = this.productList.sort((low: any, high: any) => low.price - high.price);
