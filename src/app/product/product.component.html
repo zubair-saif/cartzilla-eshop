@@ -3,24 +3,27 @@
     <app-cat-sidebar></app-cat-sidebar>
   </aside>
   <div class="col-md-9">
-    <div class="row">
-      <header class="border-bottom mb-4 pb-3">
-        <div class="form-inline d-flex">
-          <span class="mr-md-auto">32 Items found </span>
-          <select class="mr-2 form-control">
-            <option>Latest items</option>
-            <option>Trending</option>
-            <option>Most Popular</option>
-            <option>Cheapest</option>
-          </select>
-          <div class="btn-group">
-            <a href="#" class="btn btn-outline-secondary active" data-toggle="tooltip" data-original-title="List view">
-              <i class="bi bi-list"></i></a>
-            <a href="#" class="btn  btn-outline-secondary" data-toggle="tooltip" data-original-title="Grid view">
-              <i class="bi bi-grid-3x3"></i></a>
-          </div>
+    <div class="row border-bottom pb-4 mb-5">
+
+      <div class="col-md-8">
+        <span class="">32 Items found </span>
+      </div>
+
+      <div class="col-md-4 d-flex">
+        <select class="form-select" aria-label="Latest items">
+          <option>Latest items</option>
+          <option>Trending</option>
+          <option>Most Popular</option>
+          <option>Cheapest</option>
+        </select>
+        <div class="btn-group" role="group" aria-label="grid layout">
+          <a href="#" class="btn btn-outline-secondary " data-toggle="tooltip" data-original-title="List view">
+            <i class="bi bi-list"></i></a>
+          <a href="#" class="btn  btn-outline-secondary active" data-toggle="tooltip" data-original-title="Grid view">
+            <i class="bi bi-grid-3x3"></i></a>
         </div>
-      </header>
+      </div>
+     
     </div>
     <div class="row">
       <div class="d-flex justify-content-center" *ngIf="isLoading">

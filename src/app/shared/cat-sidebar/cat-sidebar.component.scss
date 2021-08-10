@@ -70,3 +70,10 @@
   background-color: #3167eb;
   color: #fff;
 }
+::ng-deep.p-accordion .p-accordion-header:not(.p-disabled) .p-accordion-header-link:focus{
+  box-shadow: 0 0 0 0.2rem#ffffff;
+}
+::ng-deep.p-accordion .p-accordion-header:not(.p-highlight):not(.p-disabled):hover .p-accordion-header-link {
+  border: none;
+  background: #ffffff!important;
+}
