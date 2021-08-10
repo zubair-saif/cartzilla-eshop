@@ -9,13 +9,14 @@ import { Observable, Subject } from 'rxjs';
 })
 export class DataService {
 
+  public baseUrl = environment.apiUrl;
   public cartItem: any = [];
   public $product = new Subject();
 
   constructor(private http: HttpClient) { }
 
   getAllProduct(): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/products`);
+    return this.http.get(`${this.baseUrl}/products`);
   }
   addProductToCart(item: Product): void {
     this.cartItem.push(item);
@@ -44,4 +45,11 @@ export class DataService {
     return this.cartItem.reduce((total: number, item: { price: number; }) => total + item.price, 0);
   }
 
+
+  getAllCategory(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/products/categories`);
+  }
+  getInCategory(type:string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/products/category/${type}`);
+  }
 }

@@ -5,8 +5,8 @@
   <div class="col-md-9">
     <div class="row border-bottom pb-4 mb-5">
 
-      <div class="col-md-8">
-        <span class="">32 Items found </span>
+      <div class="col-md-8" *ngIf="productList && productList.length>0">
+        <span>{{productList.length}} Items found </span>
       </div>
 
       <div class="col-md-4 d-flex">
