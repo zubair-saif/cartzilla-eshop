@@ -1,5 +1,5 @@
 <p-accordion>
-  <p-accordionTab header=" Categories" [selected]="true" >
+  <p-accordionTab header=" Categories" [selected]="true">
     <form class="mb-3">
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search">
@@ -11,21 +11,22 @@
     <ul class="list-group " *ngFor="let cat of catagoryList;let i=index">
       <li class="list-group-item border-0 d-flex justify-content-between align-items-center" (click)="isSelected(cat)">
         {{cat}}
-        
+
         <span class="badge btn-bg rounded-pill">{{14+i}}</span>
       </li>
     </ul>
   </p-accordionTab>
   <p-accordionTab header="Price" [selected]="true">
-    <input type="range" class="form-range" min="0" max="500" id="customRange2">
+    <input type="range" class="form-range" [value]="priceRange" [min]="inputMin" [max]="inputMax" (change)="onRangeChange($event)"
+      id="customRange2">
     <div class="row">
       <div class="form-group col-md-6">
         <label>Min</label>
-        <input class="form-control"  min="0" placeholder="$0" type="number">
+        <input class="form-control" min="0" placeholder="$0" type="number">
       </div>
       <div class="form-group text-right col-md-6">
         <label>Max</label>
-        <input class="form-control"  min="0" placeholder="$1,0000" type="number">
+        <input class="form-control" min="0" placeholder="$1,0000" type="number">
       </div>
     </div>
 

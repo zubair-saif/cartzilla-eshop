@@ -10,6 +10,7 @@ import { DataService } from '../service/data.service';
 export class ProductComponent implements OnInit {
   public productList: any = [];
   public isLoading: boolean = false;
+  public rangeResult: number = 0;
   p: number = 1;
   constructor(private data: DataService) { }
 
@@ -18,6 +19,7 @@ export class ProductComponent implements OnInit {
     this.data.getAllProduct().subscribe((res: Product) => {
       this.productList = res;
       this.isLoading = false;
+      this.rangeResult = Math.max.apply(Math, this.productList.map(function (o: any) { return o.price; }));
     })
   }
   addToCart(productId: Number) {
@@ -27,7 +29,7 @@ export class ProductComponent implements OnInit {
     this.data.addProductToCart(addToCart[0]);
   }
   isProductSort(event: any) {
-    switch (event.target.value) {     
+    switch (event.target.value) {
       case "Low":
         {
           this.productList = this.productList.sort((low: any, high: any) => low.price - high.price);
@@ -63,5 +65,14 @@ export class ProductComponent implements OnInit {
 
     }
     return this.productList
+  }
+  rangeChange(event: any) {
+    this.productList = this.productList.filter((item: any) => {
+
+      return item.price <= event;
+    })
+  }
+  GetCategory(event: any) {
+    this.productList = event;
   }
 }

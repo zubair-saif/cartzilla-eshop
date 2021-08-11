@@ -1,11 +1,11 @@
 <div class="row mt-5">
   <aside class="col-md-3">
-    <app-cat-sidebar></app-cat-sidebar>
+    <app-cat-sidebar (rangeChange)="rangeChange($event)" (GetCategory)="GetCategory($event)" [inputMax]="rangeResult" [priceRange]="150"></app-cat-sidebar>
   </aside>
   <div class="col-md-9">
     <div class="row border-bottom pb-4 mb-5">
 
-      <div class="col-md-7" >
+      <div class="col-md-7">
         <span *ngIf="productList && productList.length>0">{{productList.length}} Items found </span>
         <span *ngIf="productList && productList.length === 0">There are <strong>no results.</strong></span>
       </div>
@@ -21,15 +21,15 @@
           </div>
           <div class="col">
             <div class="btn-group" role="group" aria-label="grid layout">
-              <a href="#" class="btn btn-outline-secondary "  data-original-title="List view">
+              <a href="#" class="btn btn-outline-secondary " data-original-title="List view">
                 <i class="bi bi-list-stars"></i></a>
-              <a href="#" class="btn  btn-outline-secondary active"  data-original-title="Grid view">
+              <a href="#" class="btn  btn-outline-secondary active" data-original-title="Grid view">
                 <i class="bi bi-grid-3x3"></i></a>
             </div>
           </div>
         </div>
       </div>
-    
+
     </div>
     <div class="row">
       <div class="d-flex justify-content-center" *ngIf="isLoading">
