@@ -1,9 +1,8 @@
-import { Product } from '../models/product';
-import { Injectable, } from '@angular/core';
-import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
+import { Product } from '../models/product';
 
 @Injectable({
   providedIn: 'root'
@@ -16,14 +15,13 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  getAllProduct(): Observable<any> {
-    return this.http.get<Product>(`${this.baseUrl}/products`)
-  }
+  
   addProductToCart(item: Product): void {
     this.cartItem.push(item);
     this.$product.next(this.cartItem);
     localStorage.setItem('cart', JSON.stringify(this.cartItem));
   }
+  
   getProductsCount(): Observable<any> {
     return this.$product.asObservable();
   }
@@ -46,7 +44,9 @@ export class DataService {
     return this.cartItem.reduce((total: number, item: { price: number; }) => total + item.price, 0);
   }
 
-
+  getAllProduct(): Observable<any> {
+    return this.http.get<Product>(`${this.baseUrl}/products`)
+  }
   getAllCategory(): Observable<any> {
     return this.http.get(`${this.baseUrl}/products/categories`);
   }

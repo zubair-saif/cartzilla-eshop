@@ -49,7 +49,7 @@
   .p-accordion-header:not(.p-disabled).p-highlight
   .p-accordion-header-link {
   border: none;
-  background: #ffffff!important;
+  background: #ffffff !important;
 }
 
 .checkbox-btn {
@@ -66,14 +66,18 @@
   border-color: #e4e4e4;
 }
 .checkbox-btn input:checked ~ .btn {
-  border-color: #8912FC;
-  background-color: #8912FC;
+  border-color: #8912fc;
+  background-color: #8912fc;
   color: #fff;
 }
-::ng-deep.p-accordion .p-accordion-header:not(.p-disabled) .p-accordion-header-link:focus{
+::ng-deep.p-accordion
+  .p-accordion-header:not(.p-disabled)
+  .p-accordion-header-link:focus {
   box-shadow: 0 0 0 0.2rem#ffffff;
 }
-::ng-deep.p-accordion .p-accordion-header:not(.p-highlight):not(.p-disabled):hover .p-accordion-header-link {
+::ng-deep.p-accordion
+  .p-accordion-header:not(.p-highlight):not(.p-disabled):hover
+  .p-accordion-header-link {
   border: none;
-  background: #ffffff!important;
+  background: #ffffff !important;
 }

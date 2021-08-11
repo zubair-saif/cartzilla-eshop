@@ -2,29 +2,6 @@
     <div class="row">
         <h3 *ngIf="checkoutProduct.length>0">Checkout Summary</h3>
         <div class="col-lg-8">
-
-            <!-- <ng-container *ngIf="checkoutProduct.length>0">
-                <div class="card shadow-sm mb-3 mt-3" *ngFor="let item  of checkoutProduct">
-                    <div class="row g-0">
-                        <div class="col-md-2 p-3">
-                            <img src={{item.image}} class="img-fluid rounded-start checkout-img" alt={{item.title}}>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card-body">
-                                <h6>{{item.title}}</h6>
-                                <p class="card-text"><small class="text-muted">{{item.price |currency}}</small></p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="d-flex justify-content-between p-3 m-3 align-middle">
-                                <p class="card-text"><small class="text-muted">{{item.price |currency}}</small></p>
-                                <i class="bi bi-trash" aria-label="Remove Item" type="button"
-                                    (click)="removeItem(item.id)"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </ng-container> -->
             <ng-container *ngIf="checkoutProduct.length>0">
                 <div class="table-wrap mt-3">
                     <table class="table table-responsive table-borderless">
