@@ -69,11 +69,9 @@ export class ProductComponent implements OnInit {
     return this.productList
   }
   rangeChange(event: any) {
-    this.filterData.filter((item: any) => {
-       console.log(item.price>=event)
-      
-    })
-    
+    this.productList=this.filterData.filter((item: any) => {
+       return item.price>=event;
+    });
   }
 
   getCategory(event: any) {
