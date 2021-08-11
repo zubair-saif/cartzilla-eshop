@@ -53,4 +53,7 @@ export class DataService {
   getInCategory(type:string): Observable<any> {
     return this.http.get(`${this.baseUrl}/products/category/${type}`);
   }
+  getSingleProduct(id:number){
+    return this.http.get(`${this.baseUrl}/products/${id}`);
+  }
 }

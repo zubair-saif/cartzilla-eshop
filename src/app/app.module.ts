@@ -16,6 +16,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { ShareModuleModule } from './share-module/share-module.module';
 import { CatSidebarModule } from './shared/cat-sidebar/cat-sidebar.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     JumbotronComponent,
     CheckoutComponent,
     OrderTotalComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,

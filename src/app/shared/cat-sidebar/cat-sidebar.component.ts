@@ -23,11 +23,11 @@ export class CatSidebarComponent implements OnInit {
     });
   }
 
-  getProduct() {
-    this.data.getAllProduct().subscribe((res: any) => {
+  // getProduct() {
+  //   this.data.getAllProduct().subscribe((res: any) => {
 
-    })
-  }
+  //   })
+  // }
 
   isSelected(cat: any) {
     this.data.getInCategory(cat).subscribe((res: any) => {
