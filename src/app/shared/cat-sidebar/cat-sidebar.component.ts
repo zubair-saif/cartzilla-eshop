@@ -10,8 +10,8 @@ export class CatSidebarComponent implements OnInit {
   
   public catagoryList: any[] = [];
   @Input() inputMin = 0;
-  @Input() inputMax = 1000;
-  @Input() priceRange = 100;
+  @Input() inputMax:any;
+  @Input() priceRange:any;
   @Output() rangeChange = new EventEmitter<any>();
   @Output() GetCategory=new EventEmitter<any>();
   

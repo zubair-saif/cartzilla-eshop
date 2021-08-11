@@ -17,8 +17,8 @@
     </ul>
   </p-accordionTab>
   <p-accordionTab header="Price" [selected]="true">
-    <input type="range" class="form-range" [value]="priceRange" [min]="inputMin" [max]="inputMax" (change)="onRangeChange($event)"
-      id="customRange2">
+    <input type="range" class="form-range" [(ngModel)]="priceRange" [value]="priceRange" [min]="inputMin"
+      [max]="inputMax" (change)="onRangeChange($event)">
     <div class="row">
       <div class="form-group col-md-6">
         <label>Min</label>
@@ -26,7 +26,7 @@
       </div>
       <div class="form-group text-right col-md-6">
         <label>Max</label>
-        <input class="form-control" min="0" placeholder="$1,0000" type="number">
+        <input class="form-control" min="0" value={{priceRange}} placeholder="$1,0000" type="number">
       </div>
     </div>
 

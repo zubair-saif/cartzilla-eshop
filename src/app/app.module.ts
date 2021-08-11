@@ -17,6 +17,8 @@ import { ShareModuleModule } from './share-module/share-module.module';
 import { CatSidebarModule } from './shared/cat-sidebar/cat-sidebar.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     NgxPaginationModule,
     ShareModuleModule,
     CatSidebarModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
