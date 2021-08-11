@@ -13,12 +13,12 @@ export class CheckoutComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit(): void {
-    this.total=this.data.getTotalPrice();
-    this.checkoutProduct =this.data.getCart();
-    this.data.getProductsCount().subscribe((res:any)=>{
-      this.total=this.data.getTotalPrice();
-      this.checkoutProduct=res;
-      
+    this.total = this.data.getTotalPrice();
+    this.checkoutProduct = this.data.getCart();
+    this.data.getProductsCount().subscribe((res: any) => {
+      this.total = this.data.getTotalPrice();
+      this.checkoutProduct = res;
+
     })
   }
 

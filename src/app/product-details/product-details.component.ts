@@ -10,8 +10,7 @@ import { DataService } from '../service/data.service';
 export class ProductDetailsComponent implements OnInit, AfterViewInit {
   public getParam: any;
   public productList: any;
-  @ViewChild('someInput')
-  someInput!: ElementRef<any>;
+  @ViewChild('someInput') someInput!: ElementRef<any>;
   constructor(private route: ActivatedRoute, private data: DataService) {
 
     this.route.params.subscribe(res => {
