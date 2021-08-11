@@ -44,7 +44,7 @@
             <img src={{item.image}} class="card-img-top img-fluid" alt={{item.title}}>
             <div class="card-body">
               <a class="product-meta d-block fs-xs pb-1" href="#">{{item.category}}</a>
-              <h5 class="card-title text-truncate">{{item.title}}</h5>
+              <h5 class="card-title text-truncate" [routerLink]="['/product',item.id]">{{item.title}}</h5>
               <p class="card-text text-truncate">{{item.description}}</p>
               <div class="d-flex justify-content-between">
                 <div class="product-price"><span class="text-accent">{{item.price |currency}}</span></div>
