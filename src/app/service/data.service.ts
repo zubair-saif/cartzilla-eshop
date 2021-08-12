@@ -33,7 +33,6 @@ export class DataService {
     this.cartItem.map((item: Product, index: number) => {
       if (item.id === productId) {
         this.cartItem.splice(index, 1);
-
       }
     });
     localStorage.setItem('cart', JSON.stringify(this.cartItem));
