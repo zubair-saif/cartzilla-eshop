@@ -15,11 +15,15 @@ export class CheckoutComponent implements OnInit {
   ngOnInit(): void {
     this.total = this.data.getTotalPrice();
     this.checkoutProduct = this.data.getCart();
+    this.getProductsCounts();
+  }
+
+  getProductsCounts() {
     this.data.getProductsCount().subscribe((res: any) => {
       this.total = this.data.getTotalPrice();
       this.checkoutProduct = res;
 
-    })
+    });
   }
 
   removeItem(productId: number) {

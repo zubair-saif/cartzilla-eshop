@@ -8,28 +8,36 @@ import { DataService } from '../service/data.service';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
+
   public productList: any = [];
   public isLoading: boolean = false;
   public rangeResult = 0;
   public filterData: any;
   p: number = 1;
+
   constructor(private data: DataService) { }
 
   ngOnInit(): void {
+   this.getAllProduct();
+  }
+
+  getAllProduct(){
     this.isLoading = true;
     this.data.getAllProduct().subscribe((res: Product) => {
       this.productList = res;
       this.isLoading = false;
       this.filterData = this.productList;
       this.rangeResult = Math.max.apply(Math, this.productList.map(function (o: any) { return o.price; }));
-    })
+    });
   }
+
   addToCart(productId: Number) {
     let addToCart = this.productList.filter((item: Product) => {
       return item.id === productId;
     });
     this.data.addProductToCart(addToCart[0]);
   }
+
   isProductSort(event: any) {
     switch (event.target.value) {
       case "Low":
@@ -68,6 +76,7 @@ export class ProductComponent implements OnInit {
     }
     return this.productList
   }
+  
   rangeChange(event: any) {
     this.productList = this.filterData.filter((item: any) => {
       return item.price >= event;
