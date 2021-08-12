@@ -8,6 +8,7 @@ import { DataService } from '../service/data.service';
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent implements OnInit, AfterViewInit {
+  
   public getParam: any;
   public productList: any;
   @ViewChild('someInput') someInput!: ElementRef<any>;
