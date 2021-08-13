@@ -31,6 +31,6 @@ export class CatSidebarComponent implements OnInit {
   }
   
   onRangeChange(event: any) {
-    this.rangeChange.emit(event.srcElement.value);
+    // this.rangeChange.emit(event.srcElement.value);
   }
 }
