@@ -19,14 +19,12 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
     })
   }
   ngAfterViewInit() {
-    this.someInput.nativeElement.focus();
-
+    
   }
 
   ngOnInit(): void {
     this.data.getSingleProduct(this.getParam).subscribe((res: any) => {
       this.productList = res;
-      console.log(res);
     });
   }
 

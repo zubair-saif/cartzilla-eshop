@@ -18,10 +18,10 @@ export class ProductComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit(): void {
-   this.getAllProduct();
+    this.getAllProduct();
   }
 
-  getAllProduct(){
+  getAllProduct() {
     this.isLoading = true;
     this.data.getAllProduct().subscribe((res: Product) => {
       this.productList = res;
@@ -42,41 +42,53 @@ export class ProductComponent implements OnInit {
     switch (event.target.value) {
       case "Low":
         {
-          this.productList = this.productList.sort((low: any, high: any) => low.price - high.price);
+          this.sortByLowToHigh();
           break;
         }
 
       case "High":
         {
-          this.productList = this.productList.sort((low: any, high: any) => high.price - low.price);
+          this.sortByHighToLow();
           break;
         }
 
       case "Name":
         {
-          this.productList = this.productList.sort((low: any, high: any) => {
-            if (low.title < high.title) {
-              return -1;
-            }
-            else if (low.title > high.title) {
-              return 1;
-            }
-            else {
-              return 0;
-            }
-          })
+          this.sortByName();
           break;
         }
 
       default: {
-        this.productList = this.productList.sort((low: any, high: any) => low.price - high.price);
+        this.sortByLowToHigh();
         break;
       }
 
     }
     return this.productList
   }
-  
+
+  sortByLowToHigh() {
+    return this.productList = this.productList.sort((low: any, high: any) => low.price - high.price);
+  }
+  sortByHighToLow() {
+
+    return this.productList = this.productList.sort((low: any, high: any) => high.price - low.price);
+  }
+
+  sortByName() {
+    return this.productList = this.productList.sort((low: any, high: any) => {
+      if (low.title < high.title) {
+        return -1;
+      }
+      else if (low.title > high.title) {
+        return 1;
+      }
+      else {
+        return 0;
+      }
+    });
+  }
+
   rangeChange(event: any) {
     this.productList = this.filterData.filter((item: any) => {
       return item.price >= event;
