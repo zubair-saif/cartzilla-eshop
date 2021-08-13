@@ -27,8 +27,11 @@ export class ProductComponent implements OnInit {
       this.productList = res;
       this.isLoading = false;
       this.filterData = this.productList;
-      this.rangeResult = Math.max.apply(Math, this.productList.map(function (o: any) { return o.price; }));
     });
+  }
+
+  getMaxPrice() {
+    return this.rangeResult = Math.max.apply(Math, this.productList.map((o: any) => { return o.price; }));
   }
 
   addToCart(productId: Number) {
@@ -38,7 +41,7 @@ export class ProductComponent implements OnInit {
     this.data.addProductToCart(addToCart[0]);
   }
 
-  isProductSort(event: any) {
+  sortProduct(event: any) {
     switch (event.target.value) {
       case "Low":
         {
