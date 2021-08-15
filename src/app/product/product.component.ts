@@ -27,6 +27,7 @@ export class ProductComponent implements OnInit {
       this.productList = res;
       this.isLoading = false;
       this.filterData = this.productList;
+      this.getMaxPrice();
     });
   }
 
