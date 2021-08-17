@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Product } from '../models/product';
+import { API_ENDPOINT } from '../shared/Constant/constant';
 
 @Injectable({
   providedIn: 'root'
@@ -15,13 +16,13 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  
+
   addProductToCart(item: Product): void {
     this.cartItem.push(item);
     this.$product.next(this.cartItem);
     localStorage.setItem('cart', JSON.stringify(this.cartItem));
   }
-  
+
   getProductsCount(): Observable<any> {
     return this.$product.asObservable();
   }
@@ -44,15 +45,15 @@ export class DataService {
   }
 
   getAllProduct(): Observable<any> {
-    return this.http.get<Product>(`${this.baseUrl}/products`)
+    return this.http.get<Product>(`${this.baseUrl}${API_ENDPOINT.PRODUCTS}`)
   }
   getAllCategory(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/products/categories`);
+    return this.http.get(`${this.baseUrl}${API_ENDPOINT.PRODUCT_CATEGORIES}`);
   }
-  getInCategory(type:string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/products/category/${type}`);
+  getInCategory(type: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}${API_ENDPOINT.PRODUCT_CATEGORY}${type}`);
   }
-  getSingleProduct(id:number){
-    return this.http.get(`${this.baseUrl}/products/${id}`);
+  getSingleProduct(id: number) {
+    return this.http.get(`${this.baseUrl}${API_ENDPOINT.PRODUCTS}${id}`);
   }
 }
