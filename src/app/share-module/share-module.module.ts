@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {AccordionModule} from 'primeng/accordion';
-import {SliderModule} from 'primeng/slider';
+import { AccordionModule } from 'primeng/accordion';
+import { SliderModule } from 'primeng/slider';
 
 @NgModule({
   declarations: [],
@@ -10,6 +10,6 @@ import {SliderModule} from 'primeng/slider';
     AccordionModule,
     SliderModule
   ],
-  exports:[AccordionModule]
+  exports: [AccordionModule]
 })
 export class ShareModuleModule { }

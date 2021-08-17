@@ -7,12 +7,13 @@
         </div>
     </div>
     <ng-container *ngIf="productList && productList.length>0">
-        <div class="col-lg-3 col-md-6  my-3" *ngFor="let item of productList | paginate: { itemsPerPage: 8, currentPage: p }">
+        <div class="col-lg-3 col-md-6  my-3"
+            *ngFor="let item of productList | paginate: { itemsPerPage: 8, currentPage: p }">
             <div class="card border-0 p-3 h-100">
                 <img src={{item.image}} class="card-img-top img-fluid" alt={{item.title}}>
                 <div class="card-body">
                     <a class="product-meta d-block fs-xs pb-1">{{item.category}}</a>
-                    <h5 class="card-title text-truncate"  [routerLink]="['/product',item.id]">{{item.title}}</h5>
+                    <h5 class="card-title text-truncate" [routerLink]="['/product',item.id]">{{item.title}}</h5>
                     <p class="card-text text-truncate">{{item.description}}</p>
                     <div class="d-flex justify-content-between">
                         <div class="product-price"><span class="text-accent">{{item.price |currency}}</span></div>
@@ -51,17 +52,41 @@
 <section class="container py-lg-4 mb-4">
     <h2 class="h3 text-center pb-4">Shop by brand</h2>
     <div class="row">
-      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/01.png" style="width: 150px;" alt="Brand"></a></div>
-      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/02.png" style="width: 150px;" alt="Brand"></a></div>
-      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/03.png" style="width: 150px;" alt="Brand"></a></div>
-      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/04.png" style="width: 150px;" alt="Brand"></a></div>
-      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/05.png" style="width: 150px;" alt="Brand"></a></div>
-      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/06.png" style="width: 150px;" alt="Brand"></a></div>
-      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/07.png" style="width: 150px;" alt="Brand"></a></div>
-      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/08.png" style="width: 150px;" alt="Brand"></a></div>
-      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/09.png" style="width: 150px;" alt="Brand"></a></div>
-      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/10.png" style="width: 150px;" alt="Brand"></a></div>
-      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/11.png" style="width: 150px;" alt="Brand"></a></div>
-      <div class="col-md-3 col-sm-4 col-6"><a class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img class="d-block mx-auto" src="../../../assets/12.png" style="width: 150px;" alt="Brand"></a></div>
+        <div class="col-md-3 col-sm-4 col-6"><a
+                class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img
+                    class="d-block mx-auto" src="../../../assets/01.png" style="width: 150px;" alt="Brand"></a></div>
+        <div class="col-md-3 col-sm-4 col-6"><a
+                class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img
+                    class="d-block mx-auto" src="../../../assets/02.png" style="width: 150px;" alt="Brand"></a></div>
+        <div class="col-md-3 col-sm-4 col-6"><a
+                class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img
+                    class="d-block mx-auto" src="../../../assets/03.png" style="width: 150px;" alt="Brand"></a></div>
+        <div class="col-md-3 col-sm-4 col-6"><a
+                class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img
+                    class="d-block mx-auto" src="../../../assets/04.png" style="width: 150px;" alt="Brand"></a></div>
+        <div class="col-md-3 col-sm-4 col-6"><a
+                class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img
+                    class="d-block mx-auto" src="../../../assets/05.png" style="width: 150px;" alt="Brand"></a></div>
+        <div class="col-md-3 col-sm-4 col-6"><a
+                class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img
+                    class="d-block mx-auto" src="../../../assets/06.png" style="width: 150px;" alt="Brand"></a></div>
+        <div class="col-md-3 col-sm-4 col-6"><a
+                class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img
+                    class="d-block mx-auto" src="../../../assets/07.png" style="width: 150px;" alt="Brand"></a></div>
+        <div class="col-md-3 col-sm-4 col-6"><a
+                class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img
+                    class="d-block mx-auto" src="../../../assets/08.png" style="width: 150px;" alt="Brand"></a></div>
+        <div class="col-md-3 col-sm-4 col-6"><a
+                class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img
+                    class="d-block mx-auto" src="../../../assets/09.png" style="width: 150px;" alt="Brand"></a></div>
+        <div class="col-md-3 col-sm-4 col-6"><a
+                class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img
+                    class="d-block mx-auto" src="../../../assets/10.png" style="width: 150px;" alt="Brand"></a></div>
+        <div class="col-md-3 col-sm-4 col-6"><a
+                class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img
+                    class="d-block mx-auto" src="../../../assets/11.png" style="width: 150px;" alt="Brand"></a></div>
+        <div class="col-md-3 col-sm-4 col-6"><a
+                class="d-block bg-white shadow-sm rounded-3 my-3 py-3 py-sm-4 mb-grid-gutter" href="#"><img
+                    class="d-block mx-auto" src="../../../assets/12.png" style="width: 150px;" alt="Brand"></a></div>
     </div>
-  </section>
+</section>
