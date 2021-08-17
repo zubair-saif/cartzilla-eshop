@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product';
 import { DataService } from '../service/data.service';
+import { SORT } from '../shared/Constant/constant';
 
 @Component({
   selector: 'app-product',
@@ -44,19 +45,19 @@ export class ProductComponent implements OnInit {
 
   sortProduct(event: any) {
     switch (event.target.value) {
-      case "Low":
+      case SORT.Low:
         {
           this.sortByLowToHigh();
           break;
         }
 
-      case "High":
+      case SORT.High:
         {
           this.sortByHighToLow();
           break;
         }
 
-      case "Name":
+      case SORT.Name:
         {
           this.sortByName();
           break;
