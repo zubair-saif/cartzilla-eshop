@@ -16,6 +16,23 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
+  getAllProduct(): Observable<any> {
+    return this.http.get<Product>(`${this.baseUrl}${API_ENDPOINT.PRODUCTS}`)
+  }
+
+  getAllCategory(): Observable<any> {
+    return this.http.get(`${this.baseUrl}${API_ENDPOINT.PRODUCT_CATEGORIES}`);
+  }
+
+  getInCategory(type: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}${API_ENDPOINT.PRODUCT_CATEGORY}${type}`);
+  }
+
+  getSingleProduct(id: number) {
+    return this.http.get(`${this.baseUrl}${API_ENDPOINT.PRODUCTS}${id}`);
+  }
+
+  
 
   addProductToCart(item: Product): void {
     this.cartItem.push(item);
@@ -26,10 +43,16 @@ export class DataService {
   getProductsCount(): Observable<any> {
     return this.$product.asObservable();
   }
+
   getCart(): Product[] {
     return JSON.parse(localStorage.getItem('cart') || '[]');
 
   }
+
+  getTotalPrice(): number {
+    return this.cartItem.reduce((total: number, item: { price: number; }) => total + item.price, 0);
+  }
+
   removeItemFromCheckOut(productId: number): void {
     this.cartItem.map((item: Product, index: number) => {
       if (item.id === productId) {
@@ -38,22 +61,5 @@ export class DataService {
     });
     localStorage.setItem('cart', JSON.stringify(this.cartItem));
     return this.$product.next(this.cartItem);
-  }
-
-  getTotalPrice() {
-    return this.cartItem.reduce((total: number, item: { price: number; }) => total + item.price, 0);
-  }
-
-  getAllProduct(): Observable<any> {
-    return this.http.get<Product>(`${this.baseUrl}${API_ENDPOINT.PRODUCTS}`)
-  }
-  getAllCategory(): Observable<any> {
-    return this.http.get(`${this.baseUrl}${API_ENDPOINT.PRODUCT_CATEGORIES}`);
-  }
-  getInCategory(type: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}${API_ENDPOINT.PRODUCT_CATEGORY}${type}`);
-  }
-  getSingleProduct(id: number) {
-    return this.http.get(`${this.baseUrl}${API_ENDPOINT.PRODUCTS}${id}`);
   }
 }

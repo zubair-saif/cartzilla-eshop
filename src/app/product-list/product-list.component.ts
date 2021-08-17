@@ -11,15 +11,20 @@ export class ProductListComponent implements OnInit {
 
   public productList: any = [];
   public isLoading: boolean = false;
-  p: number = 1;
+  public p: number = 1;
+
   constructor(private data: DataService) { }
 
   ngOnInit(): void {
+    this.getAllProducts();
+  }
+
+  getAllProducts() {
     this.isLoading = true;
     this.data.getAllProduct().subscribe((res: Product) => {
       this.productList = res;
       this.isLoading = false;
-    })
+    });
   }
 
   addToCart(productId: Number) {

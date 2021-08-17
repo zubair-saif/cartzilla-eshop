@@ -18,7 +18,7 @@ export class CheckoutComponent implements OnInit {
     this.getProductsCounts();
   }
 
-  getProductsCounts() {
+  getProductsCounts(): void {
     this.data.getProductsCount().subscribe((res: any) => {
       this.total = this.data.getTotalPrice();
       this.checkoutProduct = res;
@@ -26,7 +26,7 @@ export class CheckoutComponent implements OnInit {
     });
   }
 
-  removeItem(productId: number) {
+  removeItem(productId: number): void {
     this.data.removeItemFromCheckOut(productId);
   }
 

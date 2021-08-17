@@ -14,7 +14,7 @@ export class ProductComponent implements OnInit {
   public isLoading: boolean = false;
   public rangeResult = 0;
   public filterData: any;
-  p: number = 1;
+  public p: number = 1;
 
   constructor(private data: DataService) { }
 
@@ -22,7 +22,7 @@ export class ProductComponent implements OnInit {
     this.getAllProduct();
   }
 
-  getAllProduct() {
+  getAllProduct(): void {
     this.isLoading = true;
     this.data.getAllProduct().subscribe((res: Product) => {
       this.productList = res;
@@ -32,25 +32,24 @@ export class ProductComponent implements OnInit {
     });
   }
 
-  getMaxPrice() {
-    return this.rangeResult = Math.max.apply(Math, this.productList.map((o: any) => { return o.price; }));
+  getMaxPrice(): number {
+    return this.rangeResult = Math.max.apply(Math, this.productList.map((o: Product) => { return o.price; }));
   }
 
-  addToCart(productId: Number) {
+  addToCart(productId: Number): void {
     let addToCart = this.productList.filter((item: Product) => {
       return item.id === productId;
     });
     this.data.addProductToCart(addToCart[0]);
   }
 
-  sortProduct(event: any) {
+  sortProduct(event: any):Product {
     switch (event.target.value) {
       case SORT.Low:
         {
           this.sortByLowToHigh();
           break;
         }
-
       case SORT.High:
         {
           this.sortByHighToLow();
@@ -72,15 +71,18 @@ export class ProductComponent implements OnInit {
     return this.productList
   }
 
-  sortByLowToHigh() {
-    return this.productList = this.productList.sort((low: any, high: any) => low.price - high.price);
+  sortByLowToHigh():Product {
+    return this.productList = this.productList.sort((low: any, high: any) => {
+      return low.price - high.price;
+    });
   }
-  sortByHighToLow() {
-
-    return this.productList = this.productList.sort((low: any, high: any) => high.price - low.price);
+  sortByHighToLow(): Product {
+    return this.productList = this.productList.sort((low: any, high: any) => {
+      return high.price - low.price;
+    });
   }
 
-  sortByName() {
+  sortByName(): Product {
     return this.productList = this.productList.sort((low: any, high: any) => {
       if (low.title < high.title) {
         return -1;
@@ -94,13 +96,13 @@ export class ProductComponent implements OnInit {
     });
   }
 
-  rangeChange(event: any) {
+  rangeChange(event: Event): void {
     this.productList = this.filterData.filter((item: any) => {
       return item.price >= event;
     });
   }
 
-  getCategory(event: any) {
+  getCategory(event: Event): void {
     this.productList = event;
   }
 }
