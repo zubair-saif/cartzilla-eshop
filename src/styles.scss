@@ -1,25 +1,28 @@
+$color: #8912fc;
+$text-color: #ffffff;
+.btn-bg {
+  background: $color;
+  color: $text-color;
+}
+.btn-color {
+  color: $color;
+}
+.btn-bg:hover {
+  color: $text-color;
+}
 
-$color:#8912FC;
-$text-color:#ffffff;
-.btn-bg{
-    background: $color;
-    color: $text-color;
-}
-.btn-color{
-    color: $color;
-}
-.btn-bg:hover{
-    color: $text-color;
-}
-
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 .ngx-pagination .current {
-    padding: 0.1875rem 0.625rem;
-    background: $color!important;
-    color: $text-color;
+  padding: 0.1875rem 0.625rem;
+  background: $color !important;
+  color: $text-color;
 }
 .star-rating {
-    color: #fea569;
-  }
+  color: #fea569;
+}
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
