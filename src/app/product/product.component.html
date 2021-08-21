@@ -22,59 +22,32 @@
           </div>
           <div class="col-3 d-flex justify-content-end">
             <div class="btn-group" role="group" aria-label="grid layout">
-              <a href="#" class="btn btn-outline-secondary " data-original-title="List view">
-                <i class="bi bi-list-stars"></i></a>
-              <a href="#" class="btn  btn-outline-secondary active" data-original-title="Grid view">
-                <i class="bi bi-grid-3x3"></i></a>
+              <button class="btn btn-outline-secondary " data-original-title="List view"
+                (click)="toggelGridListView('list')" [ngClass]="{'active': istoggelGridListView === 'list'}">
+                <i class="bi bi-list-stars"></i></button>
+              <button class="btn  btn-outline-secondary" data-original-title="Grid view"
+                (click)="toggelGridListView('grid')" [ngClass]="{'active': istoggelGridListView === 'grid'}">
+                <i class="bi bi-grid-3x3"></i></button>
             </div>
           </div>
         </div>
       </div>
 
     </div>
-    <div class="row">
-      <div class="d-flex justify-content-center" *ngIf="isLoading">
-        <div class="spinner-border" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
+    <div class="d-flex justify-content-center" *ngIf="isLoading">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
       </div>
-      <ng-container *ngIf="productList && productList.length>0">
-        <div class="col-lg-4 col-md-6 mb-3"
-          *ngFor="let item of productList | paginate: { itemsPerPage: 9, currentPage: p }">
-          <div class="card border-0 p-3 h-100">
-            <img src={{item.image}} class="card-img-top img-fluid" alt={{item.title}}>
-            <div class="card-body">
-              <a class="product-meta d-block fs-xs pb-1" href="#">{{item.category}}</a>
-              <h5 class="card-title text-truncate" [routerLink]="['/product',item.id]">{{item.title}}</h5>
-              <p class="card-text text-truncate">{{item.description}}</p>
-              <div class="d-flex justify-content-between">
-                <div class="product-price"><span class="text-accent">{{item.price |currency}}</span></div>
-                <div class="star-rating">
-                  <i class="bi bi-star-fill star-rating"></i>
-                  <i class="bi bi-star-fill star-rating"></i>
-                  <i class="bi bi-star-fill star-rating"></i>
-                  <i class="bi bi-star-fill star-rating"></i>
-                  <i class="bi bi-star-half star-rating"></i>
-                </div>
-              </div>
-            </div>
-            <div class="card-footer">
-              <button type="button" class="btn btn-bg d-block w-100" (click)='addToCart(item.id)'>
-                <i class="bi bi-cart-plus"></i>
-                Add to cart
-              </button>
-            </div>
-          </div>
-
-        </div>
-
-      </ng-container>
-
-    
-
     </div>
-    <div class="col-md-4 mx-auto my-4">
-      <pagination-controls (pageChange)="p = $event"></pagination-controls>
-    </div>
+
+    <ng-container *ngIf="istoggelGridListView === 'grid'">
+      <app-grid-view [productList]="productList" (additems)="addToCart($event)"></app-grid-view>
+    </ng-container>
+
+
+    <ng-container *ngIf="istoggelGridListView === 'list'">
+      <app-list-view [productList]="productList" (additems)="addToCart($event)"></app-list-view>
+    </ng-container>
+
   </div>
 </div>

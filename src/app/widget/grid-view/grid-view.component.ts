@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-grid-view',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GridViewComponent implements OnInit {
 
+  public p: number = 1;
+  @Input() productList: any;
+  @Output() additems: EventEmitter<any> = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  addToCart(item:number) {
+    this.additems.emit(item);
+  }
 }

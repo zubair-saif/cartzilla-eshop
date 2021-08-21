@@ -14,8 +14,8 @@ export class ProductComponent implements OnInit {
   public isLoading: boolean = false;
   public rangeResult = 0;
   public filterData: any;
-  public p: number = 1;
-
+  
+  public istoggelGridListView = 'grid';
   constructor(private data: DataService) { }
 
   ngOnInit(): void {
@@ -43,7 +43,7 @@ export class ProductComponent implements OnInit {
     this.data.addProductToCart(addToCart[0]);
   }
 
-  sortProduct(event: any):Product {
+  sortProduct(event: any): Product {
     switch (event.target.value) {
       case SORT.Low:
         {
@@ -71,7 +71,7 @@ export class ProductComponent implements OnInit {
     return this.productList
   }
 
-  sortByLowToHigh():Product {
+  sortByLowToHigh(): Product {
     return this.productList = this.productList.sort((low: any, high: any) => {
       return low.price - high.price;
     });
@@ -104,5 +104,9 @@ export class ProductComponent implements OnInit {
 
   getCategory(event: Event): void {
     this.productList = event;
+  }
+
+  toggelGridListView(mode: string) {
+    this.istoggelGridListView = mode;
   }
 }
