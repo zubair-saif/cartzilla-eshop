@@ -18,6 +18,8 @@ import { CatSidebarModule } from './shared/cat-sidebar/cat-sidebar.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { FormsModule } from '@angular/forms';
+import { ListViewComponent } from './widget/list-view/list-view.component';
+import { GridViewComponent } from './widget/grid-view/grid-view.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { FormsModule } from '@angular/forms';
     CheckoutComponent,
     OrderTotalComponent,
     ProductDetailsComponent,
+    ListViewComponent,
+    GridViewComponent,
   ],
   imports: [
     BrowserModule,
