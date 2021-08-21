@@ -22,10 +22,10 @@
           </div>
           <div class="col-3 d-flex justify-content-end">
             <div class="btn-group" role="group" aria-label="grid layout">
-              <button class="btn btn-outline-secondary " data-original-title="List view"
+              <button class="btn btn-outline-secondary " pTooltip="List view" tooltipPosition="bottom"
                 (click)="toggelGridListView('list')" [ngClass]="{'active': istoggelGridListView === 'list'}">
                 <i class="bi bi-list-stars"></i></button>
-              <button class="btn  btn-outline-secondary" data-original-title="Grid view"
+              <button class="btn  btn-outline-secondary" pTooltip="Grid view" tooltipPosition="bottom" 
                 (click)="toggelGridListView('grid')" [ngClass]="{'active': istoggelGridListView === 'grid'}">
                 <i class="bi bi-grid-3x3"></i></button>
             </div>

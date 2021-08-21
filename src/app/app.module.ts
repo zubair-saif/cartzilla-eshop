@@ -22,6 +22,7 @@ import { ListViewComponent } from './widget/list-view/list-view.component';
 import { GridViewComponent } from './widget/grid-view/grid-view.component';
 import { ContactComponent } from './contact/contact.component';
 import { BlogComponent } from './blog/blog.component';
+import { ProductModule } from './product/product.module';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { BlogComponent } from './blog/blog.component';
     ShareModuleModule,
     CatSidebarModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    ProductModule
   ],
   providers: [],
   bootstrap: [AppComponent]
