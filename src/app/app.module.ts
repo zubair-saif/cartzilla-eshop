@@ -20,6 +20,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { FormsModule } from '@angular/forms';
 import { ListViewComponent } from './widget/list-view/list-view.component';
 import { GridViewComponent } from './widget/grid-view/grid-view.component';
+import { ContactComponent } from './contact/contact.component';
+import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { GridViewComponent } from './widget/grid-view/grid-view.component';
     ProductDetailsComponent,
     ListViewComponent,
     GridViewComponent,
+    ContactComponent,
+    BlogComponent,
   ],
   imports: [
     BrowserModule,
