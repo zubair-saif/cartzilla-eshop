@@ -27,7 +27,17 @@
                                 <td>
                                     <div class="fw-600">{{item.price |currency}}</div>
                                 </td>
-                                <td>  <input class="form-control" min="1" placeholder="$0" type="number"> </td>
+                                <td>
+                                    <div class="input-group input-spinner">
+                                        <div class="input-group-prepend">
+                                            <button class="btn btn-light" type="button" id="button-plus"> <i class="bi bi-dash"></i></button>
+                                        </div>
+                                        <input type="text" class="form-control" value="1">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-light" type="button" id="button-minus"> <i class="bi bi-plus"></i> </button>
+                                        </div>
+                                    </div>
+                                </td>
                                 <td> {{total |currency}} </td>
                                 <td>
                                     <div class="btn" data-bs-dismiss="alert"> <i class="bi bi-trash"
