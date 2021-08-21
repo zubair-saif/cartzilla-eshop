@@ -1,0 +1,94 @@
+.checkout-img {
+  height: 5vw;
+}
+
+.pic {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.table thead {
+  background-color: #f9f9f9;
+}
+
+.table thead th {
+  padding: 15px;
+  font-size: 14px;
+  color: black;
+}
+
+.container .table-wrap {
+  margin: 20px auto;
+  overflow-x: auto;
+}
+
+.container .table-wrap::-webkit-scrollbar {
+  height: 5px;
+}
+
+.container .table-wrap::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-image: linear-gradient(to right, #5d7ecd, #0c91e6);
+}
+
+.table > :not(caption) > * > * {
+  padding: 2rem 0.5rem;
+}
+
+.input {
+  width: 50px;
+  height: 30px;
+  color: black;
+  font-weight: 600;
+  outline: none;
+  padding: 8px;
+}
+
+::placeholder {
+  color: black;
+  font-weight: 600;
+}
+
+.table tbody td {
+  padding: 30px;
+  margin: 0;
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.text-muted {
+  font-size: 12.5px;
+}
+@media (min-width: 992px) {
+  .container .table-wrap {
+    overflow: hidden;
+  }
+}
+
+.input-spinner {
+  width: 125px;
+  flex-wrap: nowrap;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.input-spinner .btn {
+  width: 42px;
+  text-align: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border: 1px solid #e4e4e4;
+  background-color: #ffffff;
+}
+.btn-light i {
+  color: #969696;
+}
+.input-spinner input.form-control {
+  text-align: center;
+  max-width: 46px;
+  font-weight: bold;
+  flex-basis: 46px;
+  border-color: #e4e4e4;
+  flex-grow: 0;
+}
