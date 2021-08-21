@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -11,14 +14,12 @@ import { JumbotronComponent } from './shared/jumbotron/jumbotron.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrderTotalComponent } from './shared/order-total/order-total.component';
 
-import { ShareModuleModule } from './share-module/share-module.module';
 import { CatSidebarModule } from './shared/cat-sidebar/cat-sidebar.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-import { FormsModule } from '@angular/forms';
 import { ContactComponent } from './contact/contact.component';
 import { BlogComponent } from './blog/blog.component';
 import { ProductModule } from './product/product.module';
+import { ShareModuleModule } from './share-module/share-module.module';
 
 @NgModule({
   declarations: [
