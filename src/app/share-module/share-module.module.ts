@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { AccordionModule } from 'primeng/accordion';
 import { SliderModule } from 'primeng/slider';
 import { TooltipModule } from 'primeng/tooltip';
+import { NgxPaginationModule } from 'ngx-pagination';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [],
@@ -11,6 +13,6 @@ import { TooltipModule } from 'primeng/tooltip';
     AccordionModule,
     SliderModule,
   ],
-  exports: [AccordionModule, TooltipModule]
+  exports: [AccordionModule, TooltipModule, NgxPaginationModule,RouterModule]
 })
 export class ShareModuleModule { }
