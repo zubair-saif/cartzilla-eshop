@@ -4,13 +4,12 @@
         <div class="row no-gutters">
             <aside class="col-md-3 p-2">
                 <a href="#" class="img-wrap">
-
                     <img class="img-fluid card-img-top" src={{item.image}} alt={{item.title}}>
                 </a>
             </aside>
             <div class="col-md-6">
                 <div class="info-main">
-                    <a href="#" class="h5 title"> {{item.title}} </a>
+                    <h5 class="card-title" [routerLink]="['/product',item.id]">{{item.title}}</h5>
                     <div class="rating-wrap mb-3">
                         <ul class="rating-stars">
                             <li style="width:80%" class="stars-active">
@@ -46,7 +45,7 @@
         </div>
 
     </article>
-    
+
 </ng-container>
 <div class="col-md-5 mx-auto my-4">
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
