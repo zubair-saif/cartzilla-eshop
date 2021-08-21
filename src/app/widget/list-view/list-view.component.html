@@ -1,5 +1,5 @@
 <ng-container *ngIf="productList && productList.length>0">
-    <article class="card card-product-list"
+    <article class="card shadow-sm card-product-list"
         *ngFor="let item of productList | paginate: { itemsPerPage: 5, currentPage: p }">
         <div class="row no-gutters">
             <aside class="col-md-3 p-2">
