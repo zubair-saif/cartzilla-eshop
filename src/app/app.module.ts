@@ -20,6 +20,7 @@ import { ContactComponent } from './contact/contact.component';
 import { BlogComponent } from './blog/blog.component';
 import { ProductModule } from './product/product.module';
 import { ShareModuleModule } from './share-module/share-module.module';
+import { CheckoutFormComponent } from './widget/checkout-form/checkout-form.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ShareModuleModule } from './share-module/share-module.module';
     ProductDetailsComponent,
     ContactComponent,
     BlogComponent,
+    CheckoutFormComponent,
   ],
   imports: [
     BrowserModule,
