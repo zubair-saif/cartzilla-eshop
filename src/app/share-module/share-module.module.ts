@@ -4,7 +4,7 @@ import { AccordionModule } from 'primeng/accordion';
 import { SliderModule } from 'primeng/slider';
 import { TooltipModule } from 'primeng/tooltip';
 import { NgxPaginationModule } from 'ngx-pagination';
-import {RouterModule} from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [],
@@ -13,6 +13,6 @@ import {RouterModule} from '@angular/router';
     AccordionModule,
     SliderModule,
   ],
-  exports: [AccordionModule, TooltipModule, NgxPaginationModule,RouterModule]
+  exports: [AccordionModule, TooltipModule, NgxPaginationModule, RouterModule]
 })
 export class ShareModuleModule { }
