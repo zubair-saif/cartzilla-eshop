@@ -16,7 +16,7 @@
       </li>
     </ul>
   </p-accordionTab>
-  <p-accordionTab header="Price" [selected]="true">
+  <p-accordionTab header="Filter By Price" [selected]="true">
     <input type="range" class="form-range" [(ngModel)]="priceRange" [value]="priceRange" [min]="inputMin"
       [max]="inputMax" (change)="onRangeChange($event)">
     <div class="row">
