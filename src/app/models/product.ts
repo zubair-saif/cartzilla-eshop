@@ -7,8 +7,8 @@ export interface Product {
     description: string;
 }
 
-// export interface ITotal {
-//     total: number;
-//     subTotal: number;
-//     shipping: number;
-// }
+export interface ITotal {
+    total: number;
+    subTotal: number;
+    shipping: number;
+}
