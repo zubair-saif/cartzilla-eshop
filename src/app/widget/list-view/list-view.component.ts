@@ -9,7 +9,7 @@ export class ListViewComponent implements OnInit {
 
   public p: number = 1;
   @Input() productList: any;
-  @Output() additems: EventEmitter<any> = new EventEmitter();;
+  @Output() additems: EventEmitter<any> = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
