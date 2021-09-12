@@ -15,7 +15,7 @@
           <input type="text" class="form-control" placeholder="Phone" aria-label="Phone">
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Email" aria-label="email">
+          <input type="email" class="form-control" placeholder="Email" aria-label="email">
         </div>
       </div>
       <div class="row g-3 my-2">
@@ -28,11 +28,27 @@
       </div>
       <div class="row g-3 my-2">
         <div class="col">
-          <input type="text" class="form-control" placeholder="Country" aria-label="Country">
+          <select id="inputState" class="form-select">
+            <option selected>Country</option>
+            <option>...</option>
+          </select>
         </div>
         <div class="col">
           <input type="number" class="form-control" placeholder="Postal Code" aria-label="Postal Code">
         </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="saveinfo">
+            <label class="form-check-label" for="saveinfo">
+              Save this information for next time
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="my-3">
+        <button type="button" class="btn btn-bg "> Continue to shipping </button>
       </div>
     </div>
     <div class="col-md-4">
