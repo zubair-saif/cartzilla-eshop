@@ -32,8 +32,6 @@ export class DataService {
     return this.http.get(`${this.baseUrl}${API_ENDPOINT.PRODUCTS}${id}`);
   }
 
-  
-
   addProductToCart(item: Product): void {
     this.cartItem.push(item);
     this.$product.next(this.cartItem);
