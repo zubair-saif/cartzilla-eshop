@@ -1,7 +1,9 @@
 
 export enum SORT {
-    Low = "Low",
-    High = "High",
+    Low_price = "Low-price",
+    High_price = "High-price",
+    Low_rating = "Low-rating",
+    High_rating = "High-rating",
     Name = "Name"
 }
 

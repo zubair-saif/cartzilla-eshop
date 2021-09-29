@@ -14,7 +14,7 @@ export class ProductComponent implements OnInit {
   public isLoading: boolean = false;
   public rangeResult = 0;
   public filterData: any;
-  
+
   public istoggelGridListView = 'grid';
   constructor(private data: DataService) { }
 
@@ -26,6 +26,7 @@ export class ProductComponent implements OnInit {
     this.isLoading = true;
     this.data.getAllProduct().subscribe((res: Product) => {
       this.productList = res;
+      console.log(res)
       this.isLoading = false;
       this.filterData = this.productList;
       this.getMaxPrice();
@@ -45,17 +46,24 @@ export class ProductComponent implements OnInit {
 
   sortProduct(event: any): Product {
     switch (event.target.value) {
-      case SORT.Low:
+      case SORT.High_rating:
         {
           this.sortByLowToHigh();
           break;
         }
-      case SORT.High:
+      case SORT.High_price:
         {
           this.sortByHighToLow();
           break;
         }
-
+      case SORT.Low_rating: {
+        this.sortByLowhRating();
+        break;
+      }
+      case SORT.High_rating: {
+        this.sortByHighRating();
+        break;
+      }
       case SORT.Name:
         {
           this.sortByName();
@@ -95,7 +103,16 @@ export class ProductComponent implements OnInit {
       }
     });
   }
-
+  sortByHighRating() {
+    return this.productList = this.productList.sort((low: any, high: any) => {
+      return high.rating.rate - low.rating.rate;
+    });
+  }
+  sortByLowhRating() {
+    return this.productList = this.productList.sort((low: any, high: any) => {
+      return low.rating.rate - high.rating.rate;
+    });
+  }
   rangeChange(event: Event): void {
     this.productList = this.filterData.filter((item: any) => {
       return item.price >= event;
