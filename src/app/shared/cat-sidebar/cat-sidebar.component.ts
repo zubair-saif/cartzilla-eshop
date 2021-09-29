@@ -1,4 +1,6 @@
+
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Product } from 'src/app/models/product';
 import { DataService } from 'src/app/service/data.service';
 
 @Component({
@@ -14,7 +16,8 @@ export class CatSidebarComponent implements OnInit {
   @Input() priceRange:any;
   @Output() rangeChange = new EventEmitter<any>();
   @Output() GetCategory=new EventEmitter<any>();
-  
+  public productList: any = [];
+  public countCategory:any={};
   
   constructor(private data: DataService) { }
 
@@ -22,6 +25,7 @@ export class CatSidebarComponent implements OnInit {
     this.data.getAllCategory().subscribe((res: any) => {
       this.catagoryList = res;
     });
+    this.getAllProducts();
   }
 
   isSelected(cat: any) {
@@ -32,5 +36,16 @@ export class CatSidebarComponent implements OnInit {
   
   onRangeChange(event: any) {
     this.rangeChange.emit(event.srcElement.value);
+  }
+
+  getAllProducts() {
+    this.data.getAllProduct().subscribe((res: Product) => {
+      this.productList = res;
+      this.countCategory={};
+      for (var i = 0; i < this.productList.length; i++) {
+        this.countCategory[this.productList[i].category] = this.countCategory[this.productList[i].category] ? this.countCategory[this.productList[i].category] + 1 : 1;
+      }
+      console.log(this.countCategory);
+    });
   }
 }
