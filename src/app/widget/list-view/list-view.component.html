@@ -44,6 +44,10 @@
     </article>
 
 </ng-container>
+
 <div class="col-md-5 mx-auto my-4">
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    <ng-container *ngIf="productList && productList.length>0">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+    </ng-container>
 </div>
