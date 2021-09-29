@@ -12,15 +12,11 @@
                     <h5 class="card-title" [routerLink]="['/product',item.id]">{{item.title}}</h5>
                     <div class="rating-wrap mb-3">
                         <ul class="rating-stars">
-                            <li style="width:80%" class="stars-active">
-                                <i class="bi bi-star-fill star-rating"></i>
-                                <i class="bi bi-star-fill star-rating"></i>
-                                <i class="bi bi-star-fill star-rating"></i>
-                                <i class="bi bi-star-fill star-rating"></i>
-                                <i class="bi bi-star-half star-rating"></i>
+                            <li>
+                                <bar-rating [(rate)]="item.rating.rate" [max]="5" [readOnly]="true"></bar-rating>
+                                <span>({{item.rating.count}})</span>
                             </li>
                         </ul>
-                        <div class="label-rating">7/10</div>
                     </div>
 
                     <p class="crop-text-2"> {{item.description}} </p>
@@ -35,7 +31,8 @@
                     <p class="text-success">Free shipping</p>
                     <br>
                     <p>
-                        <button class="btn btn-bg w-100 mb-2" (click)='addToCart(item.id)'> <i class="bi bi-cart-plus"></i> Add to Cart </button>
+                        <button class="btn btn-bg w-100 mb-2" (click)='addToCart(item.id)'> <i
+                                class="bi bi-cart-plus"></i> Add to Cart </button>
                         <button href="#" class="btn btn-light w-100"><i class="bi bi-suit-heart-fill"></i>
                             Add to wishlist
                         </button>

@@ -1,3 +1,4 @@
+@import '~ngx-bar-rating/themes/br-default-theme' ;
 $color: #8912fc;
 $text-color: #ffffff;
 .btn-bg {
@@ -20,6 +21,10 @@ a {
   color: $text-color;
 }
 .star-rating {
+  // color: #fea569;
+  display: flex;
+}
+.br-default .br-selected:after {
   color: #fea569;
 }
 .btn:focus {
@@ -50,4 +55,7 @@ a {
 .btn-outline-secondary {
   color: $color;
   border-color: $color;
+}
+.br{
+  margin: -5px 0 !important;
 }

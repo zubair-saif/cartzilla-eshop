@@ -21,7 +21,7 @@ import { BlogComponent } from './blog/blog.component';
 import { ProductModule } from './product/product.module';
 import { ShareModuleModule } from './share-module/share-module.module';
 import { CheckoutFormComponent } from './widget/checkout-form/checkout-form.component';
-
+import { BarRatingModule } from "ngx-bar-rating";
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +45,8 @@ import { CheckoutFormComponent } from './widget/checkout-form/checkout-form.comp
     CatSidebarModule,
     BrowserAnimationsModule,
     FormsModule,
-    ProductModule
+    ProductModule,
+    BarRatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

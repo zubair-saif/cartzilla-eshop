@@ -9,16 +9,17 @@ import { DataService } from 'src/app/service/data.service';
   styleUrls: ['./cat-sidebar.component.scss']
 })
 export class CatSidebarComponent implements OnInit {
-  
+
   public catagoryList: any[] = [];
-  @Input() inputMin = 0;
-  @Input() inputMax:any;
-  @Input() priceRange:any;
-  @Output() rangeChange = new EventEmitter<any>();
-  @Output() GetCategory=new EventEmitter<any>();
   public productList: any = [];
-  public countCategory:any={};
-  
+  public countCategory: any = {};
+  @Input() inputMin = 0;
+  @Input() inputMax: any;
+  @Input() priceRange: any;
+  @Output() rangeChange = new EventEmitter<any>();
+  @Output() GetCategory = new EventEmitter<any>();
+
+
   constructor(private data: DataService) { }
 
   ngOnInit(): void {
@@ -33,7 +34,7 @@ export class CatSidebarComponent implements OnInit {
       this.GetCategory.emit(res);
     });
   }
-  
+
   onRangeChange(event: any) {
     this.rangeChange.emit(event.srcElement.value);
   }
@@ -41,11 +42,14 @@ export class CatSidebarComponent implements OnInit {
   getAllProducts() {
     this.data.getAllProduct().subscribe((res: Product) => {
       this.productList = res;
-      this.countCategory={};
-      for (var i = 0; i < this.productList.length; i++) {
-        this.countCategory[this.productList[i].category] = this.countCategory[this.productList[i].category] ? this.countCategory[this.productList[i].category] + 1 : 1;
-      }
-      console.log(this.countCategory);
+      this.countCategories(this.productList);
     });
   }
+  countCategories(product: any): void {
+    this.countCategory = {};
+    for (let i = 0; i < product.length; i++) {
+      this.countCategory[product[i].category] = this.countCategory[product[i].category] ? this.countCategory[product[i].category] + 1 : 1;
+    }
+  }
 }
+

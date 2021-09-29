@@ -18,11 +18,8 @@
                     <div class="d-flex justify-content-between">
                         <div class="product-price"><span class="text-accent">{{item.price |currency}}</span></div>
                         <div class="star-rating">
-                            <i class="bi bi-star-fill star-rating"></i>
-                            <i class="bi bi-star-fill star-rating"></i>
-                            <i class="bi bi-star-fill star-rating"></i>
-                            <i class="bi bi-star-fill star-rating"></i>
-                            <i class="bi bi-star-half star-rating"></i>
+                            <bar-rating [(rate)]="item.rating.rate" [max]="5" [readOnly]="true"></bar-rating>
+                            <span>({{item.rating.count}})</span>
                         </div>
                     </div>
                 </div>
