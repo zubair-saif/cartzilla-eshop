@@ -26,13 +26,10 @@
                     <div class="ratings d-flex flex-row align-items-center">
                         <div class="d-flex flex-row">
 
-                            <i class="bi bi-star-fill star-rating"></i>
-                            <i class="bi bi-star-fill star-rating"></i>
-                            <i class="bi bi-star-fill star-rating"></i>
-                            <i class="bi bi-star-fill star-rating"></i>
-                            <i class="bi bi-star-half star-rating"></i>
+                            <bar-rating [(rate)]="productList.rating.rate" [max]="5" [readOnly]="true"></bar-rating>
+                            <span>({{productList.rating.count}})</span>
                         </div>
-                        <span>441 reviews</span>
+                        
                     </div>
                     <div class="buttons d-flex flex-row mt-5 gap-3">
                        
