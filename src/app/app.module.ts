@@ -22,6 +22,7 @@ import { ProductModule } from './product/product.module';
 import { ShareModuleModule } from './share-module/share-module.module';
 import { CheckoutFormComponent } from './widget/checkout-form/checkout-form.component';
 import { BarRatingModule } from "ngx-bar-rating";
+
 @NgModule({
   declarations: [
     AppComponent,
