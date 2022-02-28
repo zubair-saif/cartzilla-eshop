@@ -3,9 +3,9 @@ import { DataService } from '../service/data.service';
 import { Product } from '../models/product';
 
 @Component({
-  selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.scss']
 })
 export class ProductListComponent implements OnInit {
 
