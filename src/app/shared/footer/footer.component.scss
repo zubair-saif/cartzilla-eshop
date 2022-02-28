@@ -1,3 +1,21 @@
 .icon-back-top{
     font-size: 30px;
 }
+.section-footer .logo-footer {
+    max-height: 40px;
+}
+
+.list-icon, .list-bullet, .list-dots, .list-check, .list-menu {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+.list-icon li, .list-bullet li, .list-dots li, .list-check li, .list-menu li {
+    position: relative;
+    margin-bottom: 4px;
+}
+.list-menu li>a {
+    display: block;
+    color: #51585e;
+    text-decoration: none;
+}
