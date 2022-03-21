@@ -1,6 +1,7 @@
-@import '~ngx-bar-rating/themes/br-default-theme' ;
+@import "~ngx-bar-rating/themes/br-default-theme";
 $color: #8912fc;
 $text-color: #ffffff;
+$selected: #fea569;
 .btn-bg {
   background: $color;
   color: $text-color;
@@ -25,30 +26,39 @@ a {
   display: flex;
 }
 .br-default .br-selected:after {
-  color: #fea569;
+  color: $selected;
 }
 .btn:focus {
   outline: none;
   box-shadow: none;
 }
 
-.btn-check:active+.btn-outline-secondary:focus, .btn-check:checked+.btn-outline-secondary:focus, .btn-outline-secondary.active:focus, .btn-outline-secondary.dropdown-toggle.show:focus, .btn-outline-secondary:active:focus{
+.btn-check:active + .btn-outline-secondary:focus,
+.btn-check:checked + .btn-outline-secondary:focus,
+.btn-outline-secondary.active:focus,
+.btn-outline-secondary.dropdown-toggle.show:focus,
+.btn-outline-secondary:active:focus {
   outline: none;
   box-shadow: none;
 }
 
-.form-control:focus,.form-select:focus  {
+.form-control:focus,
+.form-select:focus {
   border-color: $color;
   outline: none;
   box-shadow: none;
 }
-.btn-check:active+.btn-outline-secondary, .btn-check:checked+.btn-outline-secondary, .btn-outline-secondary.active, .btn-outline-secondary.dropdown-toggle.show, .btn-outline-secondary:active {
-  color: #fff;
+.btn-check:active + .btn-outline-secondary,
+.btn-check:checked + .btn-outline-secondary,
+.btn-outline-secondary.active,
+.btn-outline-secondary.dropdown-toggle.show,
+.btn-outline-secondary:active {
+  color: $text-color;
   background-color: $color;
   border-color: $color;
 }
 .btn-outline-secondary:hover {
-  color: #fff;
+  color: $text-color;
   background-color: $color;
   border-color: $color;
 }
@@ -56,6 +66,6 @@ a {
   color: $color;
   border-color: $color;
 }
-.br{
+.br {
   margin: -5px 0 !important;
 }
