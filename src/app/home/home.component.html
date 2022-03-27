@@ -13,14 +13,14 @@
                 <img src={{item.image}} class="card-img-top img-fluid" alt={{item.title}}>
                 <div class="card-body">
                     <a class="product-meta d-block fs-xs pb-1">{{item.category}}</a>
-                    <h5 class="card-title text-truncate" [routerLink]="['/product',item.id]">{{item.title}}</h5>
+                    <h5 class="card-title text-truncate" [routerLink]="['/product',item._id]">{{item.title}}</h5>
                     <p class="card-text text-truncate">{{item.description}}</p>
                     <div class="d-flex justify-content-between">
                         <div class="product-price"><span class="text-accent">{{item.price |currency}}</span></div>
-                        <div class="star-rating">
+                        <!-- <div class="star-rating">
                             <bar-rating [(rate)]="item.rating.rate" [max]="5" [readOnly]="true"></bar-rating>
                             <span>({{item.rating.count}})</span>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="card-footer">
@@ -44,7 +44,7 @@
 </div>
 <div class="col-md-4 mx-auto my-4">
     <ng-container *ngIf="productList && productList.length>0">
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </ng-container>
 </div>
 
