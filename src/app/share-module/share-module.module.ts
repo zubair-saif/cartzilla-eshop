@@ -5,14 +5,15 @@ import { SliderModule } from 'primeng/slider';
 import { TooltipModule } from 'primeng/tooltip';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { RouterModule } from '@angular/router';
+import { FilterPipe } from '../pipe/filter.pipe';
 
 @NgModule({
-  declarations: [],
+  declarations: [FilterPipe],
   imports: [
     CommonModule,
     AccordionModule,
     SliderModule,
   ],
-  exports: [AccordionModule, TooltipModule, NgxPaginationModule, RouterModule]
+  exports: [AccordionModule, TooltipModule, NgxPaginationModule, RouterModule, FilterPipe]
 })
 export class ShareModuleModule { }

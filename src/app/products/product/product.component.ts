@@ -16,21 +16,28 @@ export class ProductComponent implements OnInit {
   public filterData: any;
 
   public istoggelGridListView = 'grid';
+  public searchKey!: string;
   constructor(private data: DataService) { }
 
   ngOnInit(): void {
     this.getAllProduct();
+    this.getSearchedValue();
   }
 
   getAllProduct(): void {
     this.isLoading = true;
     this.data.getAllProduct().subscribe((res: Product) => {
       this.productList = res;
-      console.log(res)
       this.isLoading = false;
       this.filterData = this.productList;
       this.getMaxPrice();
     });
+  }
+
+  getSearchedValue() {
+    this.data.search.subscribe((val: any) => {
+      this.searchKey = val;
+    })
   }
 
   getMaxPrice(): number {

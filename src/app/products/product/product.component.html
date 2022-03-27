@@ -27,7 +27,7 @@
               <button class="btn btn-outline-secondary " pTooltip="List view" tooltipPosition="bottom"
                 (click)="toggelGridListView('list')" [ngClass]="{'active': istoggelGridListView === 'list'}">
                 <i class="bi bi-list-task"></i></button>
-              <button class="btn  btn-outline-secondary" pTooltip="Grid view" tooltipPosition="bottom" 
+              <button class="btn  btn-outline-secondary" pTooltip="Grid view" tooltipPosition="bottom"
                 (click)="toggelGridListView('grid')" [ngClass]="{'active': istoggelGridListView === 'grid'}">
                 <i class="bi bi-grid-3x3"></i></button>
             </div>
@@ -43,12 +43,12 @@
     </div>
 
     <ng-container *ngIf="istoggelGridListView === 'grid'">
-      <app-grid-view [productList]="productList" (additems)="addToCart($event)"></app-grid-view>
+      <app-grid-view [productList]="productList" [searchKey]="searchKey" (additems)="addToCart($event)"></app-grid-view>
     </ng-container>
 
 
     <ng-container *ngIf="istoggelGridListView === 'list'">
-      <app-list-view [productList]="productList" (additems)="addToCart($event)"></app-list-view>
+      <app-list-view [productList]="productList" [searchKey]="searchKey" (additems)="addToCart($event)"></app-list-view>
     </ng-container>
 
   </div>

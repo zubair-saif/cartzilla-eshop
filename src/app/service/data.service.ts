@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Product } from '../models/product';
 import { API_ENDPOINT } from '../shared/Constant/constant';
@@ -13,6 +13,7 @@ export class DataService {
   public baseUrl = environment.apiUrl;
   public cartItem: any = [];
   public $product = new Subject();
+  public search = new BehaviorSubject<string>("");
 
   constructor(private http: HttpClient) { }
 

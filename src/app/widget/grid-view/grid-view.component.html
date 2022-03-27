@@ -1,7 +1,7 @@
 <div class="row">
   <ng-container *ngIf="productList && productList.length>0">
     <div class="col-lg-4 col-md-6 mb-3"
-      *ngFor="let item of productList | paginate: { itemsPerPage: 9, currentPage: p }">
+      *ngFor="let item of productList  | filter:searchKey:'title' | paginate: { itemsPerPage: 9, currentPage: p }">
       <div class="card border-0 p-3 h-100">
         <img src={{item.image}} class="card-img-top img-fluid" alt={{item.title}}>
         <div class="card-body">

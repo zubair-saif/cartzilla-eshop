@@ -9,6 +9,7 @@ export class ListViewComponent implements OnInit {
 
   public p: number = 1;
   @Input() productList: any;
+  @Input() searchKey = '';
   @Output() additems: EventEmitter<any> = new EventEmitter();
   constructor() { }
 

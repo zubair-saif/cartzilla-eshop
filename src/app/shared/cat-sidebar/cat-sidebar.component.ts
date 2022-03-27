@@ -18,6 +18,8 @@ export class CatSidebarComponent implements OnInit {
   @Input() priceRange: any;
   @Output() rangeChange = new EventEmitter<any>();
   @Output() GetCategory = new EventEmitter<any>();
+  searchTerm !: string;
+  totalItem: number = 0;
 
 
   constructor(private data: DataService) { }
@@ -25,14 +27,21 @@ export class CatSidebarComponent implements OnInit {
   ngOnInit(): void {
     this.data.getAllCategory().subscribe((res: any) => {
       this.catagoryList = res;
+      this.catagoryList.push('All Products');
+      this.catagoryList.sort();
     });
     this.getAllProducts();
   }
 
   isSelected(cat: any) {
-    this.data.getInCategory(cat).subscribe((res: any) => {
-      this.GetCategory.emit(res);
-    });
+    if (cat == 'All Products') {
+      this.GetCategory.emit(this.productList);
+    } else {
+      this.data.getInCategory(cat).subscribe((res: any) => {
+        this.GetCategory.emit(res);
+      });
+    }
+
   }
 
   onRangeChange(event: any) {
@@ -50,6 +59,10 @@ export class CatSidebarComponent implements OnInit {
     for (let i = 0; i < product.length; i++) {
       this.countCategory[product[i].category] = this.countCategory[product[i].category] ? this.countCategory[product[i].category] + 1 : 1;
     }
+  }
+  search(event: any) {
+    this.searchTerm = (event.target as HTMLInputElement).value;
+    this.data.search.next(this.searchTerm);
   }
 }
 

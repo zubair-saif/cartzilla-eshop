@@ -2,7 +2,8 @@
   <p-accordionTab header="Filter By Categories" [selected]="true">
     <form class="mb-3">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search">
+        <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchTerm" (keyup)="search($event)"
+          [ngModelOptions]="{standalone: true}">
         <div class="input-group-append">
           <button class="btn btn-bg" type="button"><i class="bi bi-search"></i></button>
         </div>
@@ -11,7 +12,7 @@
     <ul class="list-group " *ngFor="let cat of catagoryList;let i=index">
       <li class="list-group-item border-0 d-flex justify-content-between align-items-center" (click)="isSelected(cat)">
         {{cat}}
-
+        <span class="badge btn-bg rounded-pill" *ngIf="cat=='All Products'">{{productList.length}}</span>
         <span class="badge btn-bg rounded-pill">{{countCategory[cat]}}</span>
       </li>
     </ul>

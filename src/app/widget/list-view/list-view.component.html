@@ -1,6 +1,6 @@
 <ng-container *ngIf="productList && productList.length>0">
-    <article class="card shadow-sm card-product-list"
-        *ngFor="let item of productList | paginate: { itemsPerPage: 5, currentPage: p }">
+    <article class="card shadow-sm card-product-list" *ngFor="let item of productList | filter:searchKey:'title'|
+        paginate: { itemsPerPage: 5, currentPage: p }">
         <div class="row no-gutters">
             <aside class="col-md-3 p-2">
                 <a href="#" class="img-wrap">
