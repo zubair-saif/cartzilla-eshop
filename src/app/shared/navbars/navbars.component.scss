@@ -27,3 +27,14 @@
 .cart-count i {
   font-size: 25px;
 }
+
+.sticky {
+  background: #fff;
+  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.08);
+  position: fixed;
+  top: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: 100%;
+  z-index: 1;
+}
