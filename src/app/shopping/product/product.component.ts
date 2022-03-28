@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../models/product';
+import { Product } from '../../shared/models/product';
 import { DataService } from '../../service/data.service';
 import { SORT } from '../../shared/Constant/constant';
 
