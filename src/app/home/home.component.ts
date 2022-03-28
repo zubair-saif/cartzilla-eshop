@@ -7,7 +7,7 @@ import { Product } from '../shared/models/product';
   templateUrl: './home.component.html',
   styleUrls: ['./home.scss']
 })
-export class ProductListComponent implements OnInit {
+export class HomeComponent implements OnInit {
 
   public productList: any = [];
   public isLoading: boolean = false;
@@ -22,7 +22,7 @@ export class ProductListComponent implements OnInit {
   getAllProducts() {
     this.isLoading = true;
     this.data.getAllProduct().subscribe((res: any) => {
-      this.productList = res.data;
+      this.productList = res;
       this.isLoading = false;
 
     });

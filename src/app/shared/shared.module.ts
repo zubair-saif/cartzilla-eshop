@@ -13,9 +13,9 @@ import { NavbarsComponent } from './components/navbars/navbars.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { JumbotronComponent } from './components/jumbotron/jumbotron.component';
 import { BarRatingModule } from 'ngx-bar-rating';
-import { ProductListComponent } from '../home/home.component';
 import { GridViewComponent } from './components/grid-view/grid-view.component';
 import { ListViewComponent } from './components/list-view/list-view.component';
+import { HomeComponent } from '../home/home.component';
 
 @NgModule({
   declarations: [
@@ -25,9 +25,9 @@ import { ListViewComponent } from './components/list-view/list-view.component';
     NavbarsComponent,
     FooterComponent,
     JumbotronComponent,
-    ProductListComponent,
     ListViewComponent,
     GridViewComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
@@ -54,6 +54,7 @@ import { ListViewComponent } from './components/list-view/list-view.component';
     BarRatingModule,
     ListViewComponent,
     GridViewComponent,
+    HomeComponent
   ],
 })
 export class SharedModule { }
