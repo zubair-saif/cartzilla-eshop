@@ -6,7 +6,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ProductDetailsComponent } from './shopping/product-details/product-details.component';
 import { ProductListComponent } from './home/home.component';
 import { ProductComponent } from './shopping/product/product.component';
-import { CheckoutFormComponent } from './widget/checkout-form/checkout-form.component';
+import { CheckoutFormComponent } from './shared/components/checkout-form/checkout-form.component';
 
 const routes: Routes = [
   { path: '', component: ProductListComponent },

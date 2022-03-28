@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../../shared/models/product';
 import { DataService } from '../../service/data.service';
 import { SORT } from '../../shared/Constant/constant';
-
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
