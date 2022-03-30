@@ -11,7 +11,6 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
 
   public getParam: any;
   public productList: any;
-  @ViewChild('someInput') someInput!: ElementRef<any>;
 
   constructor(private route: ActivatedRoute, private data: DataService) {
     this.getRouteData();
@@ -35,7 +34,5 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
       this.getParam = res['id'];
     });
   }
-  changeImage(element: any) {
-    // console.log(this.someInput.nativeElement,element)
-  }
+
 }
