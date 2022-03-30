@@ -1,5 +1,5 @@
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { DataService } from '../../service/data.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { DataService } from '../../service/data.service';
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.scss']
 })
-export class ProductDetailsComponent implements OnInit, AfterViewInit {
+export class ProductDetailsComponent implements OnInit {
 
   public getParam: any;
   public productList: any;
@@ -16,9 +16,6 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
     this.getRouteData();
   }
 
-  ngAfterViewInit() {
-
-  }
   ngOnInit(): void {
     this.getSingleProduct();
   }
