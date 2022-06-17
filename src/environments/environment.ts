@@ -5,7 +5,6 @@
 export const environment = {
   production: false,
   apiUrl: 'https://fakestoreapi.com'
-  // apiUrl: 'http://localhost:7000/api/v1'
 };
 
 /*
