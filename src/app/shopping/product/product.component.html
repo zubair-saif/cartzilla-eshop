@@ -14,12 +14,11 @@
         <div class="row g-3">
           <div class="col">
             <select class="form-select" aria-label="Latest items" (change)="sortProduct($event)">
-              <option value="" selected disabled hidden>Sort By</option>
-              <option value="Name">Sort By Name</option>
-              <option value="Low-rating">Show Low to High Rating</option>
-              <option value="High-rating">Show High to Low Rating</option>
-              <option value="Low-price">Show Low to High Price</option>
-              <option value="High-price">Show High to Low Price</option>
+              <option value="Name" selected>Default Sorting</option>
+              <option value="Low-rating">Show low to high rating</option>
+              <option value="High-rating">Show high to low rating</option>
+              <option value="Low-price">Show low to high price</option>
+              <option value="High-price">Show high to low price</option>
             </select>
           </div>
           <div class="col-3 d-flex justify-content-end">
