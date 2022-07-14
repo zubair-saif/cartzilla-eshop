@@ -8,7 +8,7 @@ export enum SORT {
 }
 
 export enum API_ENDPOINT {
-    PRODUCTS = "/products/",
+    PRODUCTS = "products/",
     PRODUCT_CATEGORIES = "/products/categories",
     PRODUCT_CATEGORY = "/products/category/"
 }
