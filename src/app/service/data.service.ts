@@ -14,6 +14,7 @@ export class DataService {
   public cartItem: any = [];
   public $product = new Subject();
   public search = new BehaviorSubject<string>("");
+  public cartData: any = [];
 
   constructor(private http: HttpClient) { }
 
@@ -61,4 +62,24 @@ export class DataService {
     localStorage.setItem('cart', JSON.stringify(this.cartItem));
     return this.$product.next(this.cartItem);
   }
+
+  addToCart(pid: any, qty: string | number, replace: string) {
+    console.log(pid, qty, replace)
+    if (this.cartData[pid] == undefined) {
+      this.cartData[pid] = 0;
+    }
+    if (replace === '') {
+      this.cartData[pid] = this.cartData[pid] + qty;
+    } else {
+      this.cartData[pid] = parseInt(qty.toString());
+    }
+
+    if (this.cartData[pid] == 0) {
+      delete this.cartData[pid];
+    }
+    // this.storeItems();
+    console.log(this.cartData)
+  }
+
+
 }

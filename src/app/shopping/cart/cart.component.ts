@@ -30,4 +30,14 @@ export class CartComponent implements OnInit {
     this.data.removeItemFromCheckOut(productId);
   }
 
+  changeQty(pid: any, qty: string | number, replace: any) {
+    if (qty !== '') {
+      qty = parseInt(qty.toString()) || 1;
+      this.data.addToCart(pid, qty, replace);
+    } else {
+      this.data.addToCart(pid, 1, replace);
+    }
+
+  }
+
 }
